@@ -1,0 +1,28 @@
+permalink: /:path/:name/
+
+collections:
+  tutorial: 
+    title: 'Tutorial'
+    output: true
+  concepts:
+    title: 'Concepts'
+    output: true
+
+# Setup
+title:               'argon.js documentation'
+tagline:             'Documentation'
+description:         'This site contains documentation for web developers using <a href="http://argonjs.io" target="_blank">argon.js</a> to add AR content to a web application.'
+url:                 http://docs.argonjs.io
+baseurl:             '/'
+#baseurl:             'http://docs.argonjs.io/'
+
+exclude: ['Rakefile', 'LICENSE.txt', 'CLA.md', 'CONTRIBUTING.md', 'README.md', "node_modules", "package.json"]
+
+# About/contact
+author:
+  name:
+  email:
+
+# Local server settings
+host: 0.0.0.0
+port: 4000

@@ -1,0 +1,24 @@
+<main>
+  <form>
+
+  {% capture count %}{% increment tab_count %}{% endcapture %}
+  <input id="tab-{{ count }}" class="tsTab" type="radio" name="tabs" checked>
+  <label for="tab-{{ count }}">TypeScript</label>
+
+  {% capture count %}{% increment tab_count %}{% endcapture %}
+  <input id="tab-{{ count }}" class="jsTab" type="radio" name="tabs">
+  <label for="tab-{{ count }}">JavaScript</label>
+
+  <section class="tsContent">
+    {% highlight js %}
+    {{include.tscode}}
+    {% endhighlight %}
+  </section>
+
+  <section class="jsContent">
+    {% highlight js %}
+    {{include.jscode}}
+    {% endhighlight %}
+  </section>
+</form>
+</main>
