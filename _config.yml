@@ -12,7 +12,7 @@ collections:
 title:               'argon.js documentation'
 tagline:             'Documentation'
 description:         'This site contains documentation for web developers using <a href="http://argonjs.io" target="_blank">argon.js</a> to add AR content to a web application.'
-url:                 http://docs.argonjs.io
+url:                 http://docs.argonjs.io/argon-user-docs/
 baseurl:             '/argon-user-docs/'
 #baseurl:             'http://docs.argonjs.io/'
 
