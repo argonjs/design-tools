@@ -11,10 +11,10 @@ collections:
 # Setup
 title:               'argon.js documentation'
 tagline:             'Documentation'
-description:         'This site contains documentation for web developers using <a href="http://argonjs.io" target="_blank">argon.js</a> to add AR content to a web application.'
-url:                 http://docs.argonjs.io/argon-user-docs/
-baseurl:             '/'
-#baseurl:             'http://docs.argonjs.io/'
+description:         'This site contains documentation for web developers using <a href="http://argonjs.io/design-aids" target="_blank">Design Aids</a> to add AR content to a web application.'
+url:                 http://argonjs.io/design-aids/
+baseurl:             'http://argonjs.io/design-aids/'
+#baseurl:             'http://argonjs.io/desing-aids/'
 
 exclude: ['Rakefile', 'LICENSE.txt', 'CLA.md', 'CONTRIBUTING.md', 'README.md', "node_modules", "package.json"]
 
