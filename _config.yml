@@ -12,9 +12,9 @@ collections:
 title:               'argon.js documentation'
 tagline:             'Documentation'
 description:         'This site contains documentation for web developers using <a href="http://argonjs.io/design-aids" target="_blank">Design Aids</a> to add AR content to a web application.'
-url:                 http://argonjs.io/design-aids/
+url:                 http://design-aids.argonjs.io
 baseurl:             '/'
-#baseurl:             'http://argonjs.io/desing-aids/'
+#baseurl:             'http://design-aids.argonjs.io'
 
 exclude: ['Rakefile', 'LICENSE.txt', 'CLA.md', 'CONTRIBUTING.md', 'README.md', "node_modules", "package.json"]
 
