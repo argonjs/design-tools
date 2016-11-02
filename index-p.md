@@ -16,8 +16,14 @@ Once you have your image and audio assets in appropriate files, you go to the we
 
 ![The panomaker start screen]({{ site.baseurl }}pano1.png)
 
-Fill in the fields (name and email are optional). When you fill in the field for the number of panos, the page will expand to give you dialogue boxes for each of the pano and audio combinations:
+Fill in the fields (name and email are optional). 
+
+Once you fill in the field indicating the number of panos, the page will expand to give you dialogue boxes for each of the pano and audio combinations:
 
 ![Filling out the screen]({{ site.baseurl }}pano2.png)
 
-Fill in the file names. You can also add the latitude, longitude, and altitude of the panos, if you know that information. It isn't used in the current implementation, but the information will be added to the code (in case you want to modify the code, as described below)
+Fill in the file names, or drag and drop the files. You can also add the latitude, longitude, and altitude of the panos, if you know that information. It isn't used in the current implementation, but the information will be added to the code (in case you want to modify the code, as described below)
+
+When you press create, the system will upload and process your files. You will get a final screen that gives you a link to our server. If you click this link in the browser or in Argon4, you will get your experience. You can use our server link for testing. However, please be aware that we will clean out our directories from time to time. If you want to keep your resulting experience, you should download files and store them on your own server. 
+
+You can do this by clicking on the download button. You will receive a zipped file contining a folder. Upzip and please this folder on your server. You can also open the files and modify or add to the code to create a more elaborate experience (e..g to change the buttons, add 3D graphics). TO do this, you will probably need to look at the documentation for [Argon](http://argonjs.io).
