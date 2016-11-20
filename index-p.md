@@ -4,7 +4,7 @@ layout: page
 ---
 This is a drag-and-drop web interface to generate panoramic narratives with 360-degree panoramic images and optional audio. No programming is required. 
 
-By panoramic narratives, we mean a combination of 360 panoramic images, each with its own (optional) audio. A row of buttons appears centered at the bottom of the screen, which permits the user to choose in what order to visit the panos. You can use this structure to create a tour of rooms in a building, a college campus, a city neighborhood, historic site, etc. You could also create a fictional narrative with audio that tells a story in several locations. There are many possible practical and creative applications for this simple combination of word and image.
+By "panoramic narratives", we mean a combination of 360 panoramic images, each with its own (optional) audio. A row of buttons appears centered at the bottom of the screen, which permits the user to choose in what order to visit the panos. You can use this structure to create a tour of rooms in a building, a college campus, a city neighborhood, historic site, etc. You could also create a fictional narrative with audio that tells a story in several locations. There are many possible practical and creative applications for this simple combination of word and image.
 
 Here is a simple example: a tour of four tourist locations in Atlanta, GA:...
 
