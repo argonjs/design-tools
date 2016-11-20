@@ -3,23 +3,26 @@ layout: page
 title: 'Part 1: Getting Started with Argon-Aframe'
 ---
 
-> Download [Argon4](http://argonjs.io/argon-app) and the [Tutorial Source Code](https://github.com/argonjs/docs/tree/gh-pages/code). <br> This tutorial uses the *1-geopose* and *resources* directories.<br> **[Live Demo](/code/1-geopose)**
+This part will introduce the developer to the basic structure of an argon-aframe application: the html file and the needed code resources and asset files. 
 
-In general, *argon.js* apps can be structured however you want. This tutorial
-follows a [single-page app](https://en.wikipedia.org/wiki/Single-page_application)
-structure, in which the entire app loads from one html page.
+Writing an argon-aframe experience means inserting the appropriate regular and custom tags into an html file.
+
 
 {% highlight html %}
 <html>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
   <head>
-    <title>My Awesome argon.js App</title>
-    <script src="../resources/lib/three/three.min.js"></script>
-    <script src="../resources/lib/argon.min.js"></script>
+    <title>Hello, World! Argon + A-Frame</title>
+    <meta name="description" content="Hello, World! Argon + A-Frame">
+    <script src="../resources/js/aframe.js"></script>
+    <script src="../resources/js/argon.min.js"></script>
+    <script src="../build.js"></script>
+    <script src="../resources/js/CSS3DArgonRenderer.js"></script>
+    <script src="../resources/js/CSS3DArgonHUD.js"></script>
+    <script src="../resources/js/aframe-look-at-component.js"></script>
+	  <link rel="stylesheet" type="text/css" href="../resources/style.css">
   </head>
   <body>
-    <div id="argon"></div>
-    <script src="./app.js"></script>   
+	tags go here. 
   </body> 
 </html>
 {% endhighlight %}
