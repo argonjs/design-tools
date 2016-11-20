@@ -4,6 +4,9 @@ collections:
   tutorial: 
     title: 'Tutorial'
     output: true
+  twine:
+    title: 'Twine'
+    output: true
   concepts:
     title: 'Concepts'
     output: true
