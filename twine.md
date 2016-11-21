@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Tutorial for Argon-aframe
+title: Tutorial for Argon with Twine
 permalink: /twine/
 nav_order: 51
 ---

@@ -4,10 +4,9 @@ title: Concepts
 permalink: /concepts/
 ---
 
-This guide explains some of the core concepts of the *argon.js* framework. 
+This guide explains some of the core concepts of argon and the relationship to argon-aframe. 
 
 {% assign concepts = site.concepts | sort: "name" %}
-{% for page in concepts %}{% if page.title %}* [{{ page.title }}]({{ page.url }})
-{% endif %}{% endfor %}
+{% for page in concepts %} * [{{ page.title }}]({{ site.baseurl }}{{ page.url }})
+{% endfor %} 
 
-Additional content coming soon...

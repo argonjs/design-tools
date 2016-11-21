@@ -1,11 +1,11 @@
 permalink: /:path/:name/
 
 collections:
-  tutorial: 
-    title: 'Tutorial'
+  aframe: 
+    title: 'Argon-aframe'
     output: true
   twine:
-    title: 'Twine'
+    title: 'Argon for Twine'
     output: true
   concepts:
     title: 'Concepts'
