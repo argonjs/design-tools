@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>Hello, World! Argon + A-Frame</title>
+    <meta name="description" content="Hello, World! Geolocation Argon + A-Frame">
+    <script src="../resources/js/aframe.min.js"></script>
+    <script src="../resources/js/argon.min.js"></script>
+    <script src="../build.js"></script>
+    <script src="../resources/js/CSS3DArgonRenderer.js"></script>
+    <script src="../resources/js/CSS3DArgonHUD.js"></script>
+    <script src="../resources/js/aframe-look-at-component.js"></script>
+    <link rel="stylesheet" href="../resources/css/font-awesome.min.css">
+	  <link rel="stylesheet" type="text/css" href="../resources/style.css">
+  </head>
+  <body>
+    
+    <ar-scene>
+      <a-entity id="helloworld" position="0 -1 -8">
+      <a-cylinder position="1 0.75 1" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      </a-entity>
+      <ar-geopose id="myhometarget" lla="-84.381972 33.777494 320" userotation="false" trigger="radius:23;event:nearDakota"> 
+         <a-sphere position="0 1.25 -1" radius="20" color="#EF2D5E"></a-sphere>
+      </ar-geopose>
+     </ar-scene>
+
+      <script>
+ 
+      // Make sure the scene has loaded
+     var scene = document.querySelector('ar-scene');
+     console.log("in the code after doing the querySelector");
+      if (scene.hasLoaded) {
+      setupEvents();
+      } else {
+      console.log("waiting for loading of setUpEvents");
+      scene.addEventListener('loaded', setupEvents);
+      } 
+
+      function setupEvents () {
+        console.log("insetupEvents");
+        var TSRBPos = document.querySelector("#myhometarget");
+        TSRBPos.addEventListener('nearDakota', function(evt) {
+          alert("you are near Dakota.");
+        });
+      }
+    </script>  
+  </body>
+</html>
