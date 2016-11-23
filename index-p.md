@@ -14,13 +14,13 @@ In order to use the panoramic narrative, you first must create the panoramas and
 
 Once you have your image and audio assets in appropriate files, you go to the web site: http://panorama.lmc.gatech.edu:8000
 
-![The panomaker start screen]({{ site.baseurl }}pano1.png)
+![The panomaker start screen]({{ site.baseurl }}/public/pano1.png)
 
 Fill in the fields (name and email are optional). 
 
 Once you fill in the field indicating the number of panos, the page will expand to give you dialogue boxes for each of the pano and audio combinations:
 
-![Filling out the screen]({{ site.baseurl }}pano2.png)
+![Filling out the screen]({{ site.baseurl }}/public/pano2.png)
 
 Fill in the file names, or drag and drop the files. You can also add the latitude, longitude, and altitude of the panos, if you know that information. It isn't used in the current implementation, but the information will be added to the code (in case you want to modify the code, as described below)
 
