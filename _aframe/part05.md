@@ -1,9 +1,8 @@
 ---
 layout: page
-title: 'Part5: Geolocation'
+title: 'Lesson 5: Adding video and audio'
 ---
 
-Simple geolocation example using only one city tag from the current geolocation example
+Introduces Javascript eventlisteners as the way to add functionality to a cursor
 
-Then a second file that adds all the city tags.
 

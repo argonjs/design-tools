@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 'Part7: Using a Trigger'
+title: 'Lesson 7: Geolocation 2'
 ---
 
 Combines geolocation determinination with a simple trigger

@@ -1,7 +1,7 @@
 ---
 layout: page
-title: 'Part11: Making your own component'
+title: 'Lesson 11: Image tracking 2'
 ---
 
-Using Javascript to create your own component that will work with a-frame. 
+Creating and using your own image database with Vuforia
 

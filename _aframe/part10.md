@@ -1,8 +1,8 @@
 ---
 layout: page
-title: 'Part10: Image-tracking 2'
+title: 'Lesson 10: Image-tracking'
 ---
 
-Creating and using your own image database with Vuforia
+Uses the Vuforia Stones database to place the bronze head or other simple object. 
 
 

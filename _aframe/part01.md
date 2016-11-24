@@ -1,11 +1,11 @@
 ---
 layout: page
-title: 'Part 1: Getting Started with Argon-Aframe'
+title: 'Lesson 1: Getting Started with Argon-Aframe'
 ---
 
-This part will introduce the developer to the basic structure of an argon-aframe application: the html file and the needed code resources and asset files. 
+An Argon-aframe application consists of an html file and auxiliary files. The html file contains the tags that display the objects and the media, as we will describe in the following lessons. In addition to the tags in the `<body>` of your html file, you also need to insert script tags in the `<head>`. These script tags will refer to resources that you need, such as the aframe.js and argon.js code and other javascript files. 
 
-Writing an argon-aframe experience means inserting the appropriate regular and custom tags into an html file.
+
 
 
 {% highlight html %}
@@ -22,7 +22,7 @@ Writing an argon-aframe experience means inserting the appropriate regular and c
 	  <link rel="stylesheet" type="text/css" href="../resources/style.css">
   </head>
   <body>
-	tags go here. 
+	ARGON AFRAME TAGS GO HERE 
   </body> 
 </html>
 {% endhighlight %}

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 'Part8: Panorama'
+title: 'Lesson 8: Panoramas'
 ---
 
 A simplified panorama example with one panorama. Introducing the concept of an different reality

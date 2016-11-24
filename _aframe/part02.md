@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 'Part 2: Writing a simple Argon-aframe experience'
+title: 'Lesson 2: Writing a simple Argon-aframe experience'
 ---
 
 Argon-aframe is built on top of aframe and allows you to make use of much of the exisitng aframe code. We will not go through aframe itself. For an explanation of the aframe entities, please consult the [aframe documentation](https://aframe.io/docs/0.3.0/introduction/). Instead, we will start by showing you how easy it is to "wrap" argon-aframe around aframe itself.  
