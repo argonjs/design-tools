@@ -5,54 +5,10 @@
     <script src="../resources/js/aframe.js"></script>
     <script src="../resources/js/argon.min.js"></script>
     <script src="../build.js"></script>
-    <script src="../resources/js/CSS3DArgonRenderer.js"></script>
-    <script src="../resources/js/CSS3DArgonHUD.js"></script>
-    <script src="../resources/js/aframe-look-at-component.js"></script>
-	  <link rel="stylesheet" type="text/css" href="../resources/style.css">
   </head>
   <body>
-    <ar-scene desiredreality="src:url(../resources/reality/panorama/index.html);" panorama__cent="src:url(panoramas/cent.jpg);lla:'-84.3931 33.7608 309';">
+    <ar-scene desiredreality="src:url(../resources/reality/panorama/index.html);" panorama="src:url(panoramas/cent.jpg);lla:'-84.3931 33.7608 309';initial:true;">
+
     </ar-scene>
-    <script>
-      var arScene = document.querySelector('ar-scene');
-      arScene.sceneEl.emit('showpanorama', { name: "cent" }); 
-      // the ar-camera has an argon reference frame attached, so when it gets its first value,
-      // we'll get this event 
-      arScene.addEventListener("referenceframe-statuschanged", function () {
-      /*  var camera = document.querySelector('ar-camera');
-         var vec = camera.object3D.getWorldDirection();
-        vec.multiplyScalar(-10);
-        vec.y -= 1;
-        content.setAttribute("position", {x: vec.x, y: vec.y, z: vec.z});  */
-      });
-
-  /*    var panoramas = [
-        { text: 'Sky', name: 'skypano' }
-       { text: 'Centennial Park', name: 'cent' },
-        { text: 'High Museum', name: 'high' },
-        { text: 'Piedmont Park', name: 'pied'} 
-      ];
-
-      var currentPanorama;
-      var menu = document.getElementById('menu');
-      panoramas.forEach(function (p) {
-          var button = document.createElement('button');
-          button.textContent = p.text;
-          menu.appendChild(button);
-          button.addEventListener('click', function () {
-              arScene.sceneEl.emit('showpanorama', { name: p.name });     
-          });
-      }); */
-     
-   /*   arScene.addEventListener('argon-initialized', function(evt) {
-        arScene.sceneEl.hud.appendChild(menu);
-        arScene.sceneEl.argonApp.focusEvent.addEventListener(function () {
-            document.getElementById('menu').style.display = 'block';
-        });
-        arScene.sceneEl.argonApp.blurEvent.addEventListener(function () {
-            document.getElementById('menu').style.display = 'none';
-        });      
-      });*/
-    </script>
   </body>
 </html>
