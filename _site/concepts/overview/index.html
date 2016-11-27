@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Overview &middot; argon.js documentation
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/design-aids/public/css/poole.css">
+  <link rel="stylesheet" href="/design-aids/public/css/syntax.css">
+  <link rel="stylesheet" href="/design-aids/public/css/hyde.css">
+  <link rel="stylesheet" href="/design-aids/public/css/code-ts-js.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/design-aids/public/apple-icon-144x144.png">
+  <link rel="shortcut icon" href="/design-aids/public/favicon-96x96.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-gt">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<!--<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" checked>-->
+
+<div class="sidebar" id="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/design-aids">
+          argon.js documentation
+        </a>
+      </h1>
+      <h2>
+        
+      <p class="lead">This site contains documentation for web developers using <a href="http://argonjs.io/design-aids" target="_blank">Design Aids</a> to add AR content to a web application.</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <!--<a class="sidebar-nav-item" href="">Home</a>-->
+
+      <!--<
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            
+              
+                <a class="sidebar-subnav-item sidebar-nav-item" href="/start/faq/">FAQ</a>
+              
+            
+          
+        
+      
+        
+          
+            
+              
+                <a class="sidebar-subnav-item sidebar-nav-item" href="/start/debugging/">Debugging</a>
+              
+            
+          
+        
+      
+        
+          
+            
+              
+                <a class="sidebar-subnav-item sidebar-nav-item" href="/start/vuforia-pgp-encryptor/">Vuforia PGP Encryptor</a>
+              
+            
+          
+        
+      
+        
+          
+            
+              
+                <a class="sidebar-nav-item" href="/aframe/">Tutorial for Argon-aframe</a>
+              
+            
+          
+        
+      
+        
+          
+            
+              
+                <a class="sidebar-nav-item" href="/twine/">Tutorial for Argon with Twine</a>
+              
+            
+          
+        
+      
+      -->
+
+      <a class="sidebar-nav-item" href="/design-aids/start/setup/">Start</a>
+      <a class="sidebar-nav-item" href="/design-aids/concepts/">Key Concepts</a>
+      <a class="sidebar-nav-item" href="/design-aids/aframe/">Tutorial: Argon for Aframe</a>
+      <a class="sidebar-nav-item" href="/design-aids/twine/">Tutorial: Argon for Twine</a>
+      <a class="sidebar-nav-item" href="/design-aids/start/faq/">FAQ</a>
+      <a class="sidebar-nav-item" href="/design-aids/start/vuforia-pgp-encryptor/">Vuforia PGP Encryptor</a>
+
+      <hr/>
+
+      <a class="sidebar-nav-item" href="http://argonjs.io/argon/">API Reference</a>
+      <a class="sidebar-nav-item" href="http://argonjs.io/samples">Samples</a>
+      <a class="sidebar-nav-item" href="http://www.github.com/argonjs/argon">argon.js on GitHub</a>
+      <a class="sidebar-nav-item" href="http://argonjs.io/argon-app">Argon4 Browser</a>
+    </nav>
+
+    <div class="sidebar-item">
+      <p>
+        &copy; 2016 Georgia Tech. All rights reserved.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <style>
+.prev {
+  width: 49.5%;
+  float: left;
+  text-align: left;
+}
+
+.next {
+  width: 49.5%;
+  float: right;
+  text-align: right;
+}
+</style>
+
+
+
+
+
+
+
+
+<div class="page">
+  <a href="/design-aids/concepts/frame/" class="prev">&lt; Frame</a>
+  <a href="/design-aids/concepts/realities/" class="next">Realities &gt;</a>
+  <hr style="clear:both" />
+
+  
+    <h1 class="page-title">Concepts — Overview</h1>
+  
+  <p>This page should also describe the situation with various browsers and Argon</p>
+
+<p>On this page, we provide a brief overview of the design of <em>argon.js</em>, introducing some of the terminology and concepts used by the framework. A more detailed overview can be found in the documentation for <a href="">argonjs itself</a></p>
+
+<p>The goal of the <em>argon.js</em> framework and associated <a href="http://argonjs.io/argon-app">Argon Browser</a> (currently on iOS) is to use web technologies to create fully-registered 3D Augmented Reality (AR) applications that leverage 3D graphics, geo-spatial-positioning, and computer-vision tracking (currently using the <a href="https://www.vuforia.com">Vuforia</a> vision engine). While some of these capabilities are currently available only in the <strong>Argon Browser</strong>, <em>argon.js</em> was designed to help developers create platform-independent AR web content (that mixes virtual elements with some view of the real world) that will eventually run fully-featured on other platforms as the necessary features for 3D AR on the web become available.</p>
+
+<p>Core ideas in Argon.</p>
+
+<p>1.Views of Reality
+2.Augmentation
+3.etc.</p>
+
+
+  <hr/>
+  <a href="/design-aids/concepts/frame/" class="prev">&lt; Frame</a>
+  <a href="/design-aids/concepts/realities/" class="next">Realities &gt;</a>
+  <div style="clear:both" />
+</div>
+
+<script>
+document.body.onkeyup = function(e){
+ if (e.keyCode == '37') { window.location = '/design-aids/concepts/frame/'; } 
+ if (e.keyCode == '39') { window.location = '/design-aids/concepts/realities/'; } 
+};
+</script>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Lesson 8: Triggers &middot; argon.js documentation
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/design-aids/public/css/poole.css">
+  <link rel="stylesheet" href="/design-aids/public/css/syntax.css">
+  <link rel="stylesheet" href="/design-aids/public/css/hyde.css">
+  <link rel="stylesheet" href="/design-aids/public/css/code-ts-js.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/design-aids/public/apple-icon-144x144.png">
+  <link rel="shortcut icon" href="/design-aids/public/favicon-96x96.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-gt">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<!--<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" checked>-->
+
+<div class="sidebar" id="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/design-aids">
+          argon.js documentation
+        </a>
+      </h1>
+      <h2>
+        
+      <p class="lead">This site contains documentation for web developers using <a href="http://argonjs.io/design-aids" target="_blank">Design Aids</a> to add AR content to a web application.</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <!--<a class="sidebar-nav-item" href="">Home</a>-->
+
+      <!--<
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            
+              
+                <a class="sidebar-subnav-item sidebar-nav-item" href="/start/faq/">FAQ</a>
+              
+            
+          
+        
+      
+        
+          
+            
+              
+                <a class="sidebar-subnav-item sidebar-nav-item" href="/start/debugging/">Debugging</a>
+              
+            
+          
+        
+      
+        
+          
+            
+              
+                <a class="sidebar-subnav-item sidebar-nav-item" href="/start/vuforia-pgp-encryptor/">Vuforia PGP Encryptor</a>
+              
+            
+          
+        
+      
+        
+          
+            
+              
+                <a class="sidebar-nav-item" href="/aframe/">Tutorial for Argon-aframe</a>
+              
+            
+          
+        
+      
+        
+          
+            
+              
+                <a class="sidebar-nav-item" href="/twine/">Tutorial for Argon with Twine</a>
+              
+            
+          
+        
+      
+      -->
+
+      <a class="sidebar-nav-item" href="/design-aids/start/setup/">Start</a>
+      <a class="sidebar-nav-item" href="/design-aids/concepts/">Key Concepts</a>
+      <a class="sidebar-nav-item" href="/design-aids/aframe/">Tutorial: Argon for Aframe</a>
+      <a class="sidebar-nav-item" href="/design-aids/twine/">Tutorial: Argon for Twine</a>
+      <a class="sidebar-nav-item" href="/design-aids/start/faq/">FAQ</a>
+      <a class="sidebar-nav-item" href="/design-aids/start/vuforia-pgp-encryptor/">Vuforia PGP Encryptor</a>
+
+      <hr/>
+
+      <a class="sidebar-nav-item" href="http://argonjs.io/argon/">API Reference</a>
+      <a class="sidebar-nav-item" href="http://argonjs.io/samples">Samples</a>
+      <a class="sidebar-nav-item" href="http://www.github.com/argonjs/argon">argon.js on GitHub</a>
+      <a class="sidebar-nav-item" href="http://argonjs.io/argon-app">Argon4 Browser</a>
+    </nav>
+
+    <div class="sidebar-item">
+      <p>
+        &copy; 2016 Georgia Tech. All rights reserved.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <style>
+.prev {
+  width: 49.5%;
+  float: left;
+  text-align: left;
+}
+
+.next {
+  width: 49.5%;
+  float: right;
+  text-align: right;
+}
+</style>
+
+
+
+
+
+
+
+
+<div class="page">
+  <a href="/design-aids/aframe/part07/" class="prev">&lt; Lesson 7: Geolocation 2</a>
+  <a href="/design-aids/aframe/part09/" class="next">Lesson 9: Panoramas &gt;</a>
+  <hr style="clear:both" />
+
+  
+    <h1 class="page-title">Argon-aframe — Lesson 8: Triggers</h1>
+  
+  <p>A common need in AR and VR is to know when the viewer is within a certain distance of some location in the world. The <code class="highlighter-rouge">trigger</code> component can be attached to an entity, and when the camera is within a certain distance (specified by the <code class="highlighter-rouge">radius</code> attribute) the component will emit an event (specified by the <code class="highlighter-rouge">event</code> attribute).</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;ar-scene&gt;</span>
+      <span class="nt">&lt;ar-geopose</span> <span class="na">id=</span><span class="s">"GT"</span> <span class="na">lla=</span><span class="s">" -84.398881 33.778463"</span> <span class="na">userotation=</span><span class="s">"false"</span> <span class="na">trigger=</span><span class="s">"radius:100;event:nearGT"</span><span class="nt">&gt;</span> 
+         <span class="nt">&lt;a-entity</span> <span class="na">billboard</span> <span class="na">fixedsize=</span><span class="s">"20"</span><span class="nt">&gt;</span>
+           <span class="nt">&lt;a-plane</span> <span class="na">rotation=</span><span class="s">"0 90 0"</span> <span class="na">width=</span><span class="s">"2.9"</span> <span class="na">height=</span><span class="s">"4"</span> <span class="na">src=</span><span class="s">"#buzzpin"</span> <span class="na">transparent=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/a-plane&gt;</span>
+           <span class="nt">&lt;a-entity</span> <span class="na">css-object=</span><span class="s">"div: #mydiv"</span> <span class="na">scale=</span><span class="s">"0.02 0.02 0.02"</span> <span class="na">position=</span><span class="s">"0 4 0"</span><span class="nt">&gt;&lt;/a-entity&gt;</span>
+        <span class="nt">&lt;/a-entity&gt;</span>
+      <span class="nt">&lt;/ar-geopose&gt;</span>
+    <span class="nt">&lt;/ar-scene&gt;</span></code></pre></figure>
+
+<p>In this example, when the user (camera) is within 100 meters of the specified LLA, the event will be emitted.  Similarly, when the user (camera) moves further than 100 meters away, the event will be emitted again.  The event detail can be used to decide if it was an enter or exit event.</p>
+
+<p>Multiple triggers can be attached to an entity.  If <code class="highlighter-rouge">trigger__name</code> is attached, the event emitted will name <code class="highlighter-rouge">name</code> in the event detail <code class="highlighter-rouge">name</code> property.</p>
+
+<h3 id="properties">Properties</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+      <th>Default Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>raduis</td>
+      <td>The distance of the trigger point from the entity to the camera.</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>event</td>
+      <td>The name of the event to emit.</td>
+      <td>“trigger”</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="events">Events</h3>
+
+<p>When a trigger is fired, it will emit the following event.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">eventname</code></td>
+      <td>A trigger event containing event detail {name: string, inside: boolean, distanceSquared: number}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+  <hr/>
+  <a href="/design-aids/aframe/part07/" class="prev">&lt; Lesson 7: Geolocation 2</a>
+  <a href="/design-aids/aframe/part09/" class="next">Lesson 9: Panoramas &gt;</a>
+  <div style="clear:both" />
+</div>
+
+<script>
+document.body.onkeyup = function(e){
+ if (e.keyCode == '37') { window.location = '/design-aids/aframe/part07/'; } 
+ if (e.keyCode == '39') { window.location = '/design-aids/aframe/part09/'; } 
+};
+</script>
+    </div>
+
+  </body>
+</html>

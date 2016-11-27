@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Lesson 2a: CSSObjects &middot; argon.js documentation
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/design-aids/public/css/poole.css">
+  <link rel="stylesheet" href="/design-aids/public/css/syntax.css">
+  <link rel="stylesheet" href="/design-aids/public/css/hyde.css">
+  <link rel="stylesheet" href="/design-aids/public/css/code-ts-js.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/design-aids/public/apple-icon-144x144.png">
+  <link rel="shortcut icon" href="/design-aids/public/favicon-96x96.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="theme-base-gt">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<!--<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" checked>-->
+
+<div class="sidebar" id="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/design-aids">
+          argon.js documentation
+        </a>
+      </h1>
+      <h2>
+        
+      <p class="lead">This site contains documentation for web developers using <a href="http://argonjs.io/design-aids" target="_blank">Design Aids</a> to add AR content to a web application.</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <!--<a class="sidebar-nav-item" href="">Home</a>-->
+
+      <!--<
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            
+              
+                <a class="sidebar-subnav-item sidebar-nav-item" href="/start/faq/">FAQ</a>
+              
+            
+          
+        
+      
+        
+          
+            
+              
+                <a class="sidebar-subnav-item sidebar-nav-item" href="/start/debugging/">Debugging</a>
+              
+            
+          
+        
+      
+        
+          
+            
+              
+                <a class="sidebar-subnav-item sidebar-nav-item" href="/start/vuforia-pgp-encryptor/">Vuforia PGP Encryptor</a>
+              
+            
+          
+        
+      
+        
+          
+            
+              
+                <a class="sidebar-nav-item" href="/aframe/">Tutorial for Argon-aframe</a>
+              
+            
+          
+        
+      
+        
+          
+            
+              
+                <a class="sidebar-nav-item" href="/twine/">Tutorial for Argon with Twine</a>
+              
+            
+          
+        
+      
+      -->
+
+      <a class="sidebar-nav-item" href="/design-aids/start/setup/">Start</a>
+      <a class="sidebar-nav-item" href="/design-aids/concepts/">Key Concepts</a>
+      <a class="sidebar-nav-item" href="/design-aids/aframe/">Tutorial: Argon for Aframe</a>
+      <a class="sidebar-nav-item" href="/design-aids/twine/">Tutorial: Argon for Twine</a>
+      <a class="sidebar-nav-item" href="/design-aids/start/faq/">FAQ</a>
+      <a class="sidebar-nav-item" href="/design-aids/start/vuforia-pgp-encryptor/">Vuforia PGP Encryptor</a>
+
+      <hr/>
+
+      <a class="sidebar-nav-item" href="http://argonjs.io/argon/">API Reference</a>
+      <a class="sidebar-nav-item" href="http://argonjs.io/samples">Samples</a>
+      <a class="sidebar-nav-item" href="http://www.github.com/argonjs/argon">argon.js on GitHub</a>
+      <a class="sidebar-nav-item" href="http://argonjs.io/argon-app">Argon4 Browser</a>
+    </nav>
+
+    <div class="sidebar-item">
+      <p>
+        &copy; 2016 Georgia Tech. All rights reserved.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <style>
+.prev {
+  width: 49.5%;
+  float: left;
+  text-align: left;
+}
+
+.next {
+  width: 49.5%;
+  float: right;
+  text-align: right;
+}
+</style>
+
+
+
+
+
+
+
+
+<div class="page">
+  <a href="/design-aids/aframe/part02/" class="prev">&lt; Lesson 2: Writing a simple Argon-aframe experience</a>
+  <a href="/design-aids/aframe/part03/" class="next">Lesson 3: Selecting objects with the cursor &gt;</a>
+  <hr style="clear:both" />
+
+  
+    <h1 class="page-title">Argon-aframe — Lesson 2a: CSSObjects</h1>
+  
+  <p>In Lesson 2 we saw how to place boxes and other geometric objects in the scene. But what if you wish to put text and images in the scene as well: that is, the materials you are used to creating and manipulating on a web page using html and css? Suppose you want to place a label reading “Argon + Aframe” above a box in the space. We can do this by using CSSObjects.</p>
+
+<p>Showing graphic objects on a computer screen is called “rendering,” In order to render objects you need (not surprisingly) a renderer, and there are different kinds of renderers. For Argon-aframe there are two: the WebGL renderer and a CSS renderer. The names WebGL and CSS refer to different graphic systems, and Argon supports both systems.</p>
+
+<p>The previous Lesson 2 showed you how to create simple 3D content for the WebGL renderer such as <code class="highlighter-rouge">a-box</code>. Now we create the label as a CSSObject.</p>
+
+<p>First, here is the css that defines the class <code class="highlighter-rouge">boxface</code>. It can go in the <code class="highlighter-rouge">&lt;head&gt;</code> of the html file (along with the script tages we have in lesson 2).</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">.boxface {
+    opacity: 0.5;
+    width: 90px;
+    height: 90px;
+    font-size: 25px;
+    text-align: center;
+    color: black;
+    background: rgba(127,255,255,0.85);
+    outline: 5px solid rgba(12,25,25,1.0);
+    border: 0px;
+    margin-bottom: 0px;
+    padding: 0px 0px;
+}</code></pre></figure>
+
+<p>Now in the <code class="highlighter-rouge">&lt;body&gt;</code> of the html file, we put:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;div</span> <span class="na">hidden</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"mydiv"</span> <span class="na">class=</span><span class="s">"boxface"</span><span class="nt">&gt;</span>Argon<span class="nt">&lt;br&gt;</span>+<span class="nt">&lt;br&gt;</span>AFrame<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;ar-scene&gt;</span>
+      <span class="nt">&lt;a-entity</span> <span class="na">id=</span><span class="s">"helloworld"</span> <span class="na">position=</span><span class="s">"0 -1 -8"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a-box</span> <span class="na">position=</span><span class="s">"-1 0.5 1"</span> <span class="na">rotation=</span><span class="s">"0 45 0"</span> <span class="na">width=</span><span class="s">"1"</span> 
+               <span class="na">height=</span><span class="s">"1"</span> <span class="na">depth=</span><span class="s">"1"</span>  <span class="na">color=</span><span class="s">"#4CC3D9"</span> <span class="nt">&gt;&lt;/a-box&gt;</span>
+        <span class="nt">&lt;a-entity</span> <span class="na">position=</span><span class="s">"0 3 0"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;a-entity</span> <span class="na">rotation=</span><span class="s">"0 45 0"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;a-entity</span> <span class="na">css-object=</span><span class="s">"div: #mydiv"</span> <span class="na">scale=</span><span class="s">"0.01 0.01 0.01"</span> <span class="na">rotation=</span><span class="s">"0 0 0"</span> <span class="na">position=</span><span class="s">"0 0 0.5"</span><span class="nt">&gt;&lt;/a-entity&gt;</span>
+          <span class="nt">&lt;/a-entity&gt;</span>
+        <span class="nt">&lt;/a-entity&gt;</span>
+      <span class="nt">&lt;/a-entity&gt;</span>
+    <span class="nt">&lt;/ar-scene&gt;</span></code></pre></figure>
+
+<p>Most of these tags are familiar from Lesson2. You will recognized <code class="highlighter-rouge">&lt;ar-scene&gt;</code> to define the whole scene as well as the first <code class="highlighter-rouge">&lt;a-entity&gt;</code> and the <code class="highlighter-rouge">&lt;a-box&gt;</code>.  Below that you will see nested entity tags. <code class="highlighter-rouge">&lt;a-entity position="0 3 0"&gt;</code> positions the whole nested assemble at x = 0;y=3;z=0. This will put the label 3 meters above origin (because y indicate up and down) and so above the box. The next nested entity will rotate the label by 45 degrees along the y axis (so we can read its text).</p>
+
+<p>The next entity is the one that actually defines the CSSObject:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">   <span class="nt">&lt;a-entity</span> <span class="na">css-object=</span><span class="s">"div: #mydiv"</span> <span class="na">scale=</span><span class="s">"0.01 0.01 0.01"</span> <span class="na">rotation=</span><span class="s">"0 0 0"</span> <span class="na">position=</span><span class="s">"0 0 0.5"</span><span class="nt">&gt;&lt;/a-entity&gt;</span></code></pre></figure>
+
+<p>The main thing to notice is that the <code class="highlighter-rouge">css-object</code> component takes a div as its parameter. You see the div id is <code class="highlighter-rouge">#mydiv</code> and <code class="highlighter-rouge">mydiv</code> is defined as the id of the div shown in the code above: it is the div that holds the text <code class="highlighter-rouge">Argon&lt;br&gt;+&lt;br&gt;+Aframe</code>. That is the div that will be transformed into a 3D CSSObject, which means that it will appear (be rendered) in the 3D space with the scale, rotation, and relative positions indicated by the other components in the tag.</p>
+
+<p>A note about size: The CSS elements are sized such at 1 units (1px in this example) is 1 meter, so the elements will probably have to be scaled appropriately. So your CSS elements will get large quickly. You can see in the example above that the css-object has been set to a very small scale (.01 in all three dimensions). The</p>
+
+
+  <hr/>
+  <a href="/design-aids/aframe/part02/" class="prev">&lt; Lesson 2: Writing a simple Argon-aframe experience</a>
+  <a href="/design-aids/aframe/part03/" class="next">Lesson 3: Selecting objects with the cursor &gt;</a>
+  <div style="clear:both" />
+</div>
+
+<script>
+document.body.onkeyup = function(e){
+ if (e.keyCode == '37') { window.location = '/design-aids/aframe/part02/'; } 
+ if (e.keyCode == '39') { window.location = '/design-aids/aframe/part03/'; } 
+};
+</script>
+    </div>
+
+  </body>
+</html>
