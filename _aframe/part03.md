@@ -5,7 +5,7 @@ title: 'Lesson 3: Selecting objects with the cursor'
 
 
 
-{% hightlight html}
+{% hightlight html %}
   <body>
     <div hidden>
       <div id="mydiv" class="boxface">Argon<br>+<br>AFrame</div>
@@ -59,4 +59,4 @@ title: 'Lesson 3: Selecting objects with the cursor'
       });
 
 
-{% endhighlight}
+{% endhighlight %}
