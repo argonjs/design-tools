@@ -3,9 +3,7 @@ layout: page
 title: 'Lesson 3: Creating a cursor'
 ---
 
-In an html page, the user typically selects items by clicking on with with the cursor. You can also add a cursor to the 3D world of argon-aframe. You add the cursor to the camera, which means that it will appear in a shape you determine and at a place you specify relative to the center of the screen. This cursor shape will move as the user moves the phone. (If the user is wearing Google cardboard, then turning her head will move the cursor.) The cursor can be activated by a click user or simply by keeping it steady over an object for a length of time (the fuse time).
-
-	Look at the example below:
+In an html page, the user typically selects items by clicking on with with the cursor. You can also add a cursor to the 3D world of argon-aframe. You add the cursor to the camera, which means that it will appear in a shape you determine and at a place you specify relative to the center of the screen. This cursor shape will move as the user moves the phone. (If the user is wearing Google cardboard, then turning her head will move the cursor.) The cursor can be activated by a click user or simply by keeping it steady over an object for a length of time (the fuse time). Look at the example below:
 
 {% highlight html %}
 
