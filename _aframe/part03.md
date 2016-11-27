@@ -4,8 +4,9 @@ title: 'Lesson 3: Selecting objects with the cursor'
 ---
 
 
+THIS IS LESSON THREE
 
-{% hightlight html %}
+{% highlight html %}
   <body>
     <div hidden>
       <div id="mydiv" class="boxface">Argon<br>+<br>AFrame</div>
