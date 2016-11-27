@@ -1,27 +1,16 @@
 ---
 layout: page
-title: 'Lesson 2a: Asimple Argon-aframe experience with CSSObjects'
+title: 'Lesson 2a: CSSObjects'
 ---
 
-Explain how to create CSS Objects in addition to the WebGL objects - explain the difference. 
+In Lesson 2 we saw how to place boxes and other geometric objects in the scene. But what if you wish to put text and images in the scene as well: that is, the materials you are used to creating and manipulating on a web page using html and css? Suppose you want to place a label reading "Argon + Aframe" above a box in the space. We can do this by using CSSObjects. 
 
-The `<ar-scene>` supports an optional CSS renderer, that has been designed to work with
-Argon's stereo viewer mode.  The CSS content is positioned in front of the WebGL content 
-(since the web browsers do not allow CSS and WebGL content to be rendered with a shared 
-3D depth bufffer).
+Showing graphic objects on a computer screen is called "rendering," In order to render objects you need (not surprisingly) a renderer, and there are different kinds of renderers. For Argon-aframe there are two: the WebGL renderer and a CSS renderer. The names WebGL and CSS refer to different graphic systems, and Argon supports both systems. 
 
-To add an HTML/CSS element to the 3D scene, the `css-object` component is used.  It takes
-one or two CSS DOM references as it's properties, specifying the DOM elements to position in
-in 3D.  If only one DOM element is provided, it will be `clone()`ed when Argon displays
-the element in stereo (since one DOM element can only be displayed in one place.)  If a second
-element is provided, it will be used for the right view in stereo mode.
+The previous Lesson 2 showed you how to create simple 3D content for the WebGL renderer such as `a-box`. Now we create the label as a CSSObject. 
 
-The CSS elements are sized such at 1 units (1px in this example) is 1 meter, so the elements
-will probably have to be scaled appropriately.  Since the web create the visual detail of a 
-DOM element based on it's size, with a 100 unit element having ten times the resolution as
-a 10 unit element, you should size and scale your DOM elements to balance detail vs rendering 
-cost (higher resolution elements yield higher resolution textures and are slower to render).
-
+First, here is the css that defines the class `boxface`. It can go in the `<head>` of the html file (along with the script tages we have in lesson 2). 
+ 
 {% highlight html %}
 .boxface {
     opacity: 0.5;
@@ -37,11 +26,11 @@ cost (higher resolution elements yield higher resolution textures and are slower
     padding: 0px 0px;
 }
 {% endhighlight %}
-
+ 
+Now in the `<body>` of the html file, we put:  
 {% highlight html %}
     <div hidden>
       <div id="mydiv" class="boxface">Argon<br>+<br>AFrame</div>
-      <div id="mydiv2" class="boxface">WebGL<br>+<br>CSS</div>
     </div>
     <ar-scene>
       <a-entity id="helloworld" position="0 -1 -8">
@@ -50,9 +39,20 @@ cost (higher resolution elements yield higher resolution textures and are slower
         <a-entity position="0 3 0">
           <a-entity rotation="0 45 0">
                   <a-entity css-object="div: #mydiv" scale="0.01 0.01 0.01" rotation="0 0 0" position="0 0 0.5"></a-entity>
-                  <a-entity css-object="div: #mydiv2" scale="0.01 0.01 0.01" rotation="0 -90 0" position="-0.5 0 0"></a-entity>
           </a-entity>
         </a-entity>
       </a-entity>
     </ar-scene>
 {% endhighlight %}
+
+Most of these tags are familiar from Lesson2. You will recognized `<ar-scene>` to define the whole scene as well as the first `<a-entity>` and the `<a-box>`.  Below that you will see nested entity tags. `<a-entity position="0 3 0">` positions the whole nested assemble at x = 0;y=3;z=0. This will put the label 3 meters above origin (because y indicate up and down) and so above the box. The next nested entity will rotate the label by 45 degrees along the y axis (so we can read its text). 
+
+The next entity is the one that actually defines the CSSObject:
+
+{% highlight html %}
+   <a-entity css-object="div: #mydiv" scale="0.01 0.01 0.01" rotation="0 0 0" position="0 0 0.5"></a-entity>
+{% endhighlight %}
+
+The main thing to notice is that the `css-object` component takes a div as its parameter. You see the div id is `#mydiv` and `mydiv` is defined as the id of the div shown in the code above: it is the div that holds the text `Argon<br>+<br>+Aframe`. That is the div that will be transformed into a 3D CSSObject, which means that it will appear (be rendered) in the 3D space with the scale, rotation, and relative positions indicated by the other components in the tag.  
+
+A note about size: The CSS elements are sized such at 1 units (1px in this example) is 1 meter, so the elements will probably have to be scaled appropriately. So your CSS elements will get large quickly. You can see in the example above that the css-object has been set to a very small scale (.01 in all three dimensions). The 
