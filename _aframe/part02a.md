@@ -36,16 +36,15 @@ Now in the `<body>` of the html file, we put:
       <a-entity id="helloworld" position="0 -1 -8">
         <a-box position="-1 0.5 1" rotation="0 45 0" width="1" 
                height="1" depth="1"  color="#4CC3D9" ></a-box>
-        <a-entity position="0 3 0">
-          <a-entity rotation="0 45 0">
-                  <a-entity css-object="div: #mydiv" scale="0.01 0.01 0.01" rotation="0 0 0" position="0 0 0.5"></a-entity>
-          </a-entity>
+        <a-entity position="0 3 0" rotation="0 45 0">
+            <a-entity css-object="div: #mydiv" scale="0.01 0.01 0.01" rotation="0 0 0" position="0 0 0.5">
+            </a-entity>
         </a-entity>
       </a-entity>
     </ar-scene>
 {% endhighlight %}
 
-Most of these tags are familiar from Lesson2. You will recognized `<ar-scene>` to define the whole scene as well as the first `<a-entity>` and the `<a-box>`.  Below that you will see nested entity tags. `<a-entity position="0 3 0">` positions the whole nested assemble at x = 0;y=3;z=0. This will put the label 3 meters above origin (because y indicate up and down) and so above the box. The next nested entity will rotate the label by 45 degrees along the y axis (so we can read its text). 
+Most of these tags are familiar from Lesson2. You will recognized `<ar-scene>` to define the whole scene as well as the first `<a-entity>` and the `<a-box>`.  Below that you will see nested entity tags. `<a-entity position="0 3 0">` positions the whole nested assemble at x = 0;y=3;z=0. This will put the label 3 meters above origin (because y indicate up and down) and so above the box; it also rotates the label by 45 degrees along the y axis (so we can read its text). 
 
 The next entity is the one that actually defines the CSSObject:
 

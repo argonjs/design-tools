@@ -224,15 +224,14 @@
       <span class="nt">&lt;a-entity</span> <span class="na">id=</span><span class="s">"helloworld"</span> <span class="na">position=</span><span class="s">"0 -1 -8"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;a-box</span> <span class="na">position=</span><span class="s">"-1 0.5 1"</span> <span class="na">rotation=</span><span class="s">"0 45 0"</span> <span class="na">width=</span><span class="s">"1"</span> 
                <span class="na">height=</span><span class="s">"1"</span> <span class="na">depth=</span><span class="s">"1"</span>  <span class="na">color=</span><span class="s">"#4CC3D9"</span> <span class="nt">&gt;&lt;/a-box&gt;</span>
-        <span class="nt">&lt;a-entity</span> <span class="na">position=</span><span class="s">"0 3 0"</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;a-entity</span> <span class="na">rotation=</span><span class="s">"0 45 0"</span><span class="nt">&gt;</span>
-                  <span class="nt">&lt;a-entity</span> <span class="na">css-object=</span><span class="s">"div: #mydiv"</span> <span class="na">scale=</span><span class="s">"0.01 0.01 0.01"</span> <span class="na">rotation=</span><span class="s">"0 0 0"</span> <span class="na">position=</span><span class="s">"0 0 0.5"</span><span class="nt">&gt;&lt;/a-entity&gt;</span>
-          <span class="nt">&lt;/a-entity&gt;</span>
+        <span class="nt">&lt;a-entity</span> <span class="na">position=</span><span class="s">"0 3 0"</span> <span class="na">rotation=</span><span class="s">"0 45 0"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a-entity</span> <span class="na">css-object=</span><span class="s">"div: #mydiv"</span> <span class="na">scale=</span><span class="s">"0.01 0.01 0.01"</span> <span class="na">rotation=</span><span class="s">"0 0 0"</span> <span class="na">position=</span><span class="s">"0 0 0.5"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;/a-entity&gt;</span>
         <span class="nt">&lt;/a-entity&gt;</span>
       <span class="nt">&lt;/a-entity&gt;</span>
     <span class="nt">&lt;/ar-scene&gt;</span></code></pre></figure>
 
-<p>Most of these tags are familiar from Lesson2. You will recognized <code class="highlighter-rouge">&lt;ar-scene&gt;</code> to define the whole scene as well as the first <code class="highlighter-rouge">&lt;a-entity&gt;</code> and the <code class="highlighter-rouge">&lt;a-box&gt;</code>.  Below that you will see nested entity tags. <code class="highlighter-rouge">&lt;a-entity position="0 3 0"&gt;</code> positions the whole nested assemble at x = 0;y=3;z=0. This will put the label 3 meters above origin (because y indicate up and down) and so above the box. The next nested entity will rotate the label by 45 degrees along the y axis (so we can read its text).</p>
+<p>Most of these tags are familiar from Lesson2. You will recognized <code class="highlighter-rouge">&lt;ar-scene&gt;</code> to define the whole scene as well as the first <code class="highlighter-rouge">&lt;a-entity&gt;</code> and the <code class="highlighter-rouge">&lt;a-box&gt;</code>.  Below that you will see nested entity tags. <code class="highlighter-rouge">&lt;a-entity position="0 3 0"&gt;</code> positions the whole nested assemble at x = 0;y=3;z=0. This will put the label 3 meters above origin (because y indicate up and down) and so above the box; it also rotates the label by 45 degrees along the y axis (so we can read its text).</p>
 
 <p>The next entity is the one that actually defines the CSSObject:</p>
 

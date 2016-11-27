@@ -3,6 +3,60 @@ layout: page
 title: 'Lesson 3: Selecting objects with the cursor'
 ---
 
-Cursor component described here. 
 
 
+{% hightlight html}
+  <body>
+    <div hidden>
+      <div id="mydiv" class="boxface">Argon<br>+<br>AFrame</div>
+      <div id="mydiv2" class="boxface">WebGL<br>+<br>CSS</div>
+    </div>
+    <ar-scene>
+      <a-entity id="helloworld" position="0 -1 -8">
+        <a-sphere position="0 1.25 -1" cursor-listener radius="1.25" color="#EF2D5E" ></a-sphere>
+        <a-box position="-1 0.5 1" cursor-listener rotation="0 45 0" width="1" height="1" depth="1"  color="#4CC3D9" ></a-box>
+        <a-entity billboard position="0 3 0">
+          <a-entity rotation="0 45 0">
+                  <a-entity css-object="div: #mydiv" scale="0.01 0.01 0.01" rotation="0 0 0" position="0 0 0.5"></a-entity>
+                  <a-entity css-object="div: #mydiv2" scale="0.01 0.01 0.01" rotation="0 -90 0" position="-0.5 0 0"></a-entity>
+          </a-entity>
+        </a-entity>
+        <a-cylinder position="1 0.75 1" cursor-listener radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+        <a-plane rotation="-90 0 0" cursor-listener width="4" height="4" color="#7BC8A4"></a-plane>
+      </a-entity>
+
+      <ar-camera>
+        <a-entity id="myCursor" cursor="fuse:true; fuse-timeout: 1000"
+                    position="0 0 -0.1"
+                    geometry="primitive:ring; radiusInner: 0.001; radiusOuter: 0.0015"
+                    material="color: #2E3A87; opacity:0.3;">          
+        </a-entity>
+      </ar-camera>
+    </ar-scene>
+    <script>
+      function getRandColor () {
+          var letters = '0123456789ABCDEF'.split('');
+          var color = '#';
+          for (var i = 0; i < 6; i++) {
+              color += letters[Math.floor(Math.random() * 16)];
+          }
+          return color;
+      }
+      // Component to change to random color on click.
+      AFRAME.registerComponent('cursor-listener', {
+        init: function () {
+          this.el.addEventListener('click', function (evt) {
+            this.setAttribute('material', 'color', getRandColor());
+            console.log('I was clicked at: ', evt.detail.intersection.point);
+          });
+          this.el.addEventListener('mouseenter', function (evt) {
+            this.setAttribute('material', 'opacity', 0.5);
+          });
+          this.el.addEventListener('mouseleave', function (evt) {
+            this.setAttribute('material', 'opacity', 1.0);
+          });
+        }
+      });
+
+
+{% endhighlight}
