@@ -1,31 +1,18 @@
 ---
 layout: page
-title: 'Lesson 3: Selecting objects with the cursor'
+title: 'Lesson 3: Creating a cursor'
 ---
 
+In an html page, the user typically selects items by clicking on with with the cursor. You can also add a cursor to the 3D world of argon-aframe. You add the cursor to the camera, which means that it will appear in a shape you determine and at a place you specify relative to the center of the screen. This cursor shape will move as the user moves the phone. (If the user is wearing Google cardboard, then turning her head will move the cursor.) The cursor can be activated by a click user or simply by keeping it steady over an object for a length of time (the fuse time).
 
-THIS IS LESSON THREE
+	Look at the example below:
 
 {% highlight html %}
   <body>
-    <div hidden>
-      <div id="mydiv" class="boxface">Argon<br>+<br>AFrame</div>
-      <div id="mydiv2" class="boxface">WebGL<br>+<br>CSS</div>
-    </div>
     <ar-scene>
       <a-entity id="helloworld" position="0 -1 -8">
         <a-sphere position="0 1.25 -1" cursor-listener radius="1.25" color="#EF2D5E" ></a-sphere>
-        <a-box position="-1 0.5 1" cursor-listener rotation="0 45 0" width="1" height="1" depth="1"  color="#4CC3D9" ></a-box>
-        <a-entity billboard position="0 3 0">
-          <a-entity rotation="0 45 0">
-                  <a-entity css-object="div: #mydiv" scale="0.01 0.01 0.01" rotation="0 0 0" position="0 0 0.5"></a-entity>
-                  <a-entity css-object="div: #mydiv2" scale="0.01 0.01 0.01" rotation="0 -90 0" position="-0.5 0 0"></a-entity>
-          </a-entity>
-        </a-entity>
-        <a-cylinder position="1 0.75 1" cursor-listener radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-        <a-plane rotation="-90 0 0" cursor-listener width="4" height="4" color="#7BC8A4"></a-plane>
       </a-entity>
-
       <ar-camera>
         <a-entity id="myCursor" cursor="fuse:true; fuse-timeout: 1000"
                     position="0 0 -0.1"
@@ -34,16 +21,14 @@ THIS IS LESSON THREE
         </a-entity>
       </ar-camera>
     </ar-scene>
+ {% endhighlight %}   
+ 
+ This simple `<ar-scene>` consists of two things: a sphere and the ar-camera. The camera has a cursor entity attached to it. The cursor entity is to set "fuse," which means that it will function to select an object by just keeping the cursor over the object, in this case for 1000 miliseconds = 1 sec. The other components of the cursor entity define how it looks: a ring of a certain color and 30% opacity.  (You can define the shape and color of your own cursor, if you don't like the ring.)
+ 
+At this point the cursor is defined, but it doesn't do anything when the user holds it over an object. In order to make the cursor act, we need to add javascript. This javascript code creates and registers a new component. You can learn about components in Lesson 12. Here you can just examine the code to see what it does. Note that the new component is called `cursor-listener`. It is defined in the javascript, and it is attached to the sphere in the code above. This means that cursor-listener will attach events to the sphere The sphere will react to the click-event, the mouseeneter-event, and the mouseleave-event. These events make the sphere reactive to the cursor.
+
+{% highlight html %}   
     <script>
-      function getRandColor () {
-          var letters = '0123456789ABCDEF'.split('');
-          var color = '#';
-          for (var i = 0; i < 6; i++) {
-              color += letters[Math.floor(Math.random() * 16)];
-          }
-          return color;
-      }
-      // Component to change to random color on click.
       AFRAME.registerComponent('cursor-listener', {
         init: function () {
           this.el.addEventListener('click', function (evt) {
@@ -59,5 +44,5 @@ THIS IS LESSON THREE
         }
       });
 
-
 {% endhighlight %}
+

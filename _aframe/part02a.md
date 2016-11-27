@@ -44,7 +44,7 @@ Now in the `<body>` of the html file, we put:
     </ar-scene>
 {% endhighlight %}
 
-Most of these tags are familiar from Lesson2. You will recognized `<ar-scene>` to define the whole scene as well as the first `<a-entity>` and the `<a-box>`.  Below that you will see nested entity tags. `<a-entity position="0 3 0">` positions the whole nested assemble at x = 0;y=3;z=0. This will put the label 3 meters above origin (because y indicate up and down) and so above the box; it also rotates the label by 45 degrees along the y axis (so we can read its text). 
+Most of these tags are familiar from Lesson 2. You will recognize `<ar-scene>` to define the whole scene as well as the first `<a-entity>` and the `<a-box>`.  Below that you will see nested entity tags. `<a-entity position="0 3 0">` positions the whole nested assemble at x = 0;y=3;z=0. This will put the label 3 meters above origin (because y indicate up and down) and so above the box; it also rotates the label by 45 degrees along the y axis (so we can read its text). 
 
 The next entity is the one that actually defines the CSSObject:
 
@@ -52,6 +52,6 @@ The next entity is the one that actually defines the CSSObject:
    <a-entity css-object="div: #mydiv" scale="0.01 0.01 0.01" rotation="0 0 0" position="0 0 0.5"></a-entity>
 {% endhighlight %}
 
-The main thing to notice is that the `css-object` component takes a div as its parameter. You see the div id is `#mydiv` and `mydiv` is defined as the id of the div shown in the code above: it is the div that holds the text `Argon<br>+<br>+Aframe`. That is the div that will be transformed into a 3D CSSObject, which means that it will appear (be rendered) in the 3D space with the scale, rotation, and relative positions indicated by the other components in the tag.  
+The main thing to notice is that the `css-object` component takes a div as its parameter. You see the div id is `#mydiv` and `mydiv` is defined as the id of the div shown in the code above: it is the div that holds the text `Argon<br>+<br>+Aframe`. That is the div that will be transformed into a 3D CSSObject, which means that it will be rendered in the 3D space with the scale, rotation, and relative positions indicated by the other components in the tag.  
 
-A note about size: The CSS elements are sized such at 1 units (1px in this example) is 1 meter, so the elements will probably have to be scaled appropriately. So your CSS elements will get large quickly. You can see in the example above that the css-object has been set to a very small scale (.01 in all three dimensions). The 
+A note about size: The CSS elements are sized such at 1 units (1px in this example) is 1 meter, so conventionally sized CSS elements will be huge. The CSS class `boxface` above is 90 pixels by 90 pixels, which would translate to 90 meters by 90 meters. The CSSObject has been scaled to .01 in all dimensions, which brings the box down to .9 meters in height and width.'

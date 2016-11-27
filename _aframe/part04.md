@@ -3,6 +3,4 @@ layout: page
 title: 'Lesson 4: Adding an Eventlistener'
 ---
 
-Introduces Javascript eventlisteners as the way to add functionality to a cursor
-
-
+In lesson 3 we saw an example of an eventlistener. Here in Lesson 4 we describe eventlisteners in more detail, because event listeners are very useful in a variety of places in argon-aframe code, not just for the cursor. 
