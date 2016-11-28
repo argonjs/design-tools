@@ -25,7 +25,15 @@ In an html page, the user typically selects items by clicking on with with the c
  
  This simple `<ar-scene>` consists of two things: a sphere and the ar-camera. The camera has a cursor entity attached to it. The cursor entity is to set "fuse," which means that it will function to select an object by just keeping the cursor over the object, in this case for 1000 miliseconds = 1 sec. The other components of the cursor entity define how it looks: a ring of a certain color and 30% opacity.  (You can define the shape and color of your own cursor, if you don't like the ring.)
  
-At this point the cursor is defined, but it doesn't do anything when the user holds it over an object. In order to make the cursor act, we need to add javascript. This javascript code creates and registers a new component. You can learn about components in Lesson 12. Here you can just examine the code to see what it does. Note that the new component is called `cursor-listener`. It is defined in the javascript, and it is attached to the sphere in the code above. This means that cursor-listener will attach events to the sphere The sphere will react to the click-event, the mouseeneter-event, and the mouseleave-event. These events make the sphere reactive to the cursor.
+At this point the cursor is defined, but it doesn't have any effect on the objects in the scene. In order to make the cursor have an effect, we need to add javascript that "listens" for the cursor when it selects an object. We do this by registering a new "component". You can learn more about components in Lesson 12. They are a key feature of working with aframe (and argon-aframe).  Here you can see how this particular component works. The new component is called `cursor-listener`. It is coded in a script tag and "registered with aframe. Then this component can be attached to the sphere, as you see in this line from the html above:  
+
+{% highlight html %}
+
+<a-sphere position="0 1.25 -1" cursor-listener radius="1.25" color="#EF2D5E" ></a-sphere>
+
+{% endhighlight %}
+
+ The sphere will react to the click-event, the mouseeneter-event, and the mouseleave-event. These events make the sphere reactive to the cursor. Here is the component that makes this possible: 
 
 {% highlight html %}   
 
@@ -33,7 +41,6 @@ At this point the cursor is defined, but it doesn't do anything when the user ho
       AFRAME.registerComponent('cursor-listener', {
         init: function () {
           this.el.addEventListener('click', function (evt) {
-            this.setAttribute('material', 'color', getRandColor());
             console.log('I was clicked at: ', evt.detail.intersection.point);
           });
           this.el.addEventListener('mouseenter', function (evt) {
@@ -47,3 +54,4 @@ At this point the cursor is defined, but it doesn't do anything when the user ho
 
 {% endhighlight %}
 
+The function defined in the component is executed once when the component is initialized for a particular object. It adds three eventListeners (for eventListeners see Lesson 4). One event fires when the user clicks on the particular object. When that happens the program prints the message 'I was clicked at: ' together with the point where the cursor indicated contact with the object.  The other two events fire when the cursor starts hovering over the object or moves away from the object. Hovering over the object will cause it to become translucent (opacity = .5) Moving away will cause the object to return to its full opacity. 
