@@ -55,3 +55,5 @@ At this point the cursor is defined, but it doesn't have any effect on the objec
 {% endhighlight %}
 
 The function defined in the component is executed once when the component is initialized for a particular object. It adds three eventListeners (for eventListeners see Lesson 4). One event fires when the user clicks on the particular object. When that happens the program prints the message 'I was clicked at: ' together with the point where the cursor indicated contact with the object.  The other two events fire when the cursor starts hovering over the object or moves away from the object. Hovering over the object will cause it to become translucent (opacity = .5) Moving away will cause the object to return to its full opacity. 
+
+Obviously you can put any javascript code you want into these events. You could make audio play when the user clicks on the sphere, or you can start the sphere rotating, or display a text on the screne. This is how you introduce interactivity into the scene. 
