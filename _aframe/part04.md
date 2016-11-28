@@ -25,9 +25,9 @@ Let's look again at the code for the sphere from Lesson 3.
 
 {% endhighlight %}
 
-cursor-listener is the component that contains the three events. The advantage of a component is that we can attach it to many objects. Each object will then respond when clicked or when the cursor passes over it. 
+cursor-listener is the component that contains the three events. The advantage of a component is that we can attach it to many objects. Each object will then respond when clicked or when the cursor passes over it. But we could also attach the event directly to the sphere itself. 
 
-But we could also attach the event directly to the sphere itself. First we would remove the event listener and instead give the sphere an id:
+First we would remove the component and instead give the sphere an id:
 
 {% highlight html %}
 
@@ -35,7 +35,7 @@ But we could also attach the event directly to the sphere itself. First we would
 
 {% endhighlight %}
 
-Then in our javascript code we would add find that object and add the event directly:
+Then in our javascript code we would identify the sphere object and add the event directly:
 
 
 {% highlight html %}
