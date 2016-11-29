@@ -3,7 +3,7 @@ layout: page
 title: 'Lesson 5: Adding video and audio'
 ---
 
-Show how to add video and audio
+Aframe itself has a video tag that you can use to add video or audio to a scene. 
 
 {% highlight html %}
 <a-scene>
@@ -15,4 +15,6 @@ Show how to add video and audio
 </a-scene>
 {% endhighlight %}
 
-can do this in ar-scene as well?
+This same tag will work in argon-aframe. It will play a video on a plane positioned in space. 
+
+You can also create your own component that can use the html audio and video tags to have more control over the presentation and interaction with the media. 
