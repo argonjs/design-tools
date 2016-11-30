@@ -26,9 +26,12 @@ Once you have the equirectangular image as a .jpg or .png file, then you can cre
 </html>
 {% endhighlight %}
 
-You attach two components to the `<ar-scene>`:  `desiredreality` and `panorama`. Let's take the second component first. `panorama` has three attributes. The source is the image file. The lla specified the geoposition where the panorama was taken (you can find this on Google Maps and elsehere). Right now the geopositio information is just stored, but it could be useful in an application later. The `initial` attribute indicates that this panorama is to be displayed in the background when the application starts up. Since it is the only panorama in this example, there is no other choice. However, you can declare multiple panoramas in this component and switch among them (see below). In that case the `initial` attribute becomes useful.
+You attach two components to the `<ar-scene>`:  `desiredreality` and `panorama`. Let's take the second component first. `panorama` has three attributes. The source is the image file (Centennial Olympic Park in Atlanta Georgia USA) The lla specified the geoposition where the panorama was taken (you can find this on Google Maps and elsehere). Right now the geopositio information is just stored, but it could be useful in an application later. The `initial` attribute indicates that this panorama is to be displayed in the background when the application starts up. Since it is the only panorama in this example, there is no other choice. However, you can declare multiple panoramas in this component and switch among them (see below). In that case the `initial` attribute becomes useful.
 
-This example is empty so far: we just have the panoramic background, but nothing in the 3D space itself. But we can of course put any of the other aframe entities in the scene as well. For example, the geometric objects in our basic example
+
+## Putting a-frame objects in the panoramic reality  
+
+This example is empty so far: we  have the panoramic background, but nothing in the 3D space itself. But the panorama reality is just like the live video background. We can put any of the other aframe entities in the scene as well. For example, the geometric objects in our basic example:
 
 
 {% highlight html %}
@@ -58,7 +61,7 @@ Now the sphere, box, cylinder, and plane will all appear inside the space with t
 
 ## Switching among multiple panoramas  
 
-Here is a more complicated example that features four different panoramas. The user switches between them by pressing a button at the buttom of the screen.
+Here is a more complex example that features four different panoramas. The user switches between them by pressing a button at the buttom of the screen.
 
 
 {% highlight html %}
@@ -127,48 +130,60 @@ Here is a more complicated example that features four different panoramas. The u
 </html>
 {% endhighlight %}
 
+Let's look in detail at the `<ar-scene>` tag above:
+
+
+{% highlight html %}
+    <ar-scene desiredreality="src:url(../resources/reality/panorama/index.html);" panorama__aqui="src:url(panoramas/aqui.jpg);lla:-84.3951 33.7634 206;initial:true;" panorama__cent="src:url(panoramas/cent.jpg);lla:'-84.3931 33.7608 309';" panorama__high="src:url(panoramas/high.jpg);lla:'-84.38584 33.79035 289';" panorama__pied="src: url(panoramas/pied.jpg);lla:'-84.37427 33.78577 271';">
+    </ar-scene>
+{% endhighlight %}
+
+It has four panorama components, one for each of the four panos. The name extension (after the `__`) becomes the identifier for that panorama.
+
+
+This section of the code creates the menu that swtiches between the four panoramas and associates a click event handler with each of the four panoramas:
+
+{% highlight html %}
+    var panoramas = [
+        { text: 'Georgia Aquarium', name: 'aqui' },
+        { text: 'Centennial Park', name: 'cent' },
+        { text: 'High Museum', name: 'high' },
+        { text: 'Piedmont Park', name: 'pied'}
+      ];
+
+      var currentPanorama;
+      // get the menu element
+      var menu = document.getElementById('menu');
+      // add buttons to the menu for each panorama
+      panoramas.forEach(function (p) {
+          var button = document.createElement('button');
+          button.textContent = p.text;
+          menu.appendChild(button);
+          // when a button is tapped, have the reality fade in the corresponding panorama
+          button.addEventListener('click', function () {
+              arScene.sceneEl.emit('showpanorama', { name: p.name });     
+          });
+      });
+      
+      arScene.addEventListener('argon-initialized', function(evt) {
+        arScene.sceneEl.hud.appendChild(menu);
+        arScene.sceneEl.argonApp.focusEvent.addEventListener(function () {
+            document.getElementById('menu').style.display = 'block';
+        });
+        arScene.sceneEl.argonApp.blurEvent.addEventListener(function () {
+            document.getElementById('menu').style.display = 'none';
+        });      
+      });
+
+{% endhighlight %}
+
 
 
 ## The Panorama Reality
 
-The `panorama` component is added to the `<ar-scene>` entity to specify a geopositioned panoramic image for the custom
-panorama reality (the panorama reality implements the "ael.gatech.panorama" reality protocol). 
-
-Multiple components can be specified with the multiple component syntax 
-(`panorama__` plus a name).  The name extension (after the `__`) becomes the identity
-of that panorama, and is used to show the panorama by emitting a "showpanorama" event on 
-the `<ar-scene>`.  For example, in this example:
-
-{% highlight html %}
-<ar-scene desiredreality="src:url(../resources/reality/panorama/index.html);"
-      panorama__aqui="src:url(/panorama/panoramas/aqui.jpg);lla:-84.3951 33.7634 206;initial:true;">
-</ar-scene>
-{% endhighlight %}
-
-The panorama has the identity `aqui`, and so it can be shown in the panoramic reality by emiting an event:
+The Panorama Reality is one of three realities (backgrounds) that are currently available. The other two are the standard video reality (provided by the phone's camera) and the Google streetview. This is a panorama provided by accessing Google streetview for a particular location (long and lat).  
 
 
-{% highlight html %}
-var arScene = document.querySelector('ar-scene');
-var menu = document.getElementById('menu');
-
-var button = document.createElement('button');
-button.textContent = "Aquarium";
-menu.appendChild(button);
-// when a button is tapped, have the reality fade in the corresponding panorama
-button.addEventListener('click', function () {
-    arScene.sceneEl.emit('showpanorama', { name: "aqui" });     
-});
-{% endhighlight %}
-
-If the `initial` property is true, argon.js will attempt to load the panorama when the 
-panorama reality is activated.
-
-
-
-
-
-Then the second example with four, as in the current sample. 
 
 
 
