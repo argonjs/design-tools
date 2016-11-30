@@ -3,7 +3,11 @@ layout: page
 title: 'Lesson 9: Panoramas'
 ---
 
-A simplified panorama example with one panorama. Introducing the concept of an different reality
+The default background for Argon is the view offered by the live video camera on the phone or tablet. Instead of the video, you can substitute a 360-degree panoramic image as the background. Panoramas offer a number of compelling design options. If the user cannot get to a specific location, such as a museum or historic site, the panorama can convey what the site looks like. The AR experience can play over the panorama. 
+
+To display a panoramic backgroud, Argon needs an image in a special format called an 'equirectangular projection." You can make such a photo yourself using a relatively inexpensive panoramic camera such as the [Ricoh Theta S](https://theta360.com/en/about/theta/s.html). You can also take multiple images with a DLSR camera and stitch them into an equirectangular projection using a stitcher program such as [PTGui](https://www.ptgui.com). The resulting image should have an aspect ratio (width to height) of 2-1. 5000x2500 pixels is a good size. If the image is too large, it may fail to load. 
+
+
 
 ## Panorama Reality
 
