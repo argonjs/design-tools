@@ -12,18 +12,54 @@
 	  <link rel="stylesheet" type="text/css" href="../resources/style.css">
   </head>
   <body>
-    
+    <script>
+     AFRAME.registerComponent('showdistance', {
+        schema: { 
+          default: ""
+        },
+
+        init: function () {
+            this.text = "";
+            console.log('initializing the showdistance component');
+        },
+
+        update: function () {
+          this.text = this.data;
+          console.log('updating the showdistance component');
+        },
+
+        tick: function (t) {
+          var object3D = this.el.object3D;
+          var camera = this.el.sceneEl.camera;
+          if (!camera) {return;}
+          var cameraPos = camera.getWorldPosition();
+          var thisPos = object3D.getWorldPosition();
+          var distance = Math.round(thisPos.distanceTo(cameraPos));
+
+          var cssDiv = this.el.getObject3D('div');
+          var msg = this.text + distance + " meters away";
+          cssDiv.elements[0].innerHTML = msg;
+          cssDiv.elements[1].innerHTML = msg;
+        }
+      });
+    </script>
+
+     <div >    
+      <div id="posdiv" class="label">Position</div>
+    </div>
+
     <ar-scene>
-      <a-entity id="helloworld" position="0 -1 -8">
-      <a-cylinder position="1 0.75 1" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      </a-entity>
-      <ar-geopose id="myhometarget" lla="-84.381972 33.777494 320" userotation="false" trigger="radius:23;event:nearDakota"> 
-         <a-sphere position="0 1.25 -1" radius="20" color="#EF2D5E"></a-sphere>
-      </ar-geopose>
+      <ar-geopose id="myhometarget" lla="-84.382787 33.777441 310" userotation="false" trigger="radius:23;event:nearDakota"> 
+          <a-entity  billboard>
+          <a-entity css-object="div: #posdiv" scale=".05 .05 .05" position="0 0 0" showdistance="The distance is:  "></a-entity>
+          </a-entity>
+      </ar-geopose> 
+   
+   
      </ar-scene>
 
       <script>
- 
+    
       // Make sure the scene has loaded
      var scene = document.querySelector('ar-scene');
      console.log("in the code after doing the querySelector");
@@ -35,11 +71,11 @@
       } 
 
       function setupEvents () {
-        console.log("insetupEvents");
-        var TSRBPos = document.querySelector("#myhometarget");
+        console.log("in setup Events");
+      var TSRBPos = document.querySelector("#myhometarget");
         TSRBPos.addEventListener('nearDakota', function(evt) {
           alert("you are near Dakota.");
-        });
+        }); 
       }
     </script>  
   </body>
