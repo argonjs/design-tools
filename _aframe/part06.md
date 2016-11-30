@@ -3,9 +3,9 @@ layout: page
 title: 'Lesson 6: Geolocation'
 ---
 
-Key features of Augmented Reality are 1. the ability of associating data objects with places in the world and 2. displaying those objects at those places. 
+Key features of Augmented Reality include 1. the ability of associating data objects with places in the world and 2. displaying those objects at those places. 
 
-The `<ar-geopose>` primitive tag is argon-aframe's way of locating objects in space. The `<ar-geopose>` primitive creates an entity with a `referenceframe` component. This component defines the position and/or rotation of the entity by an LLA (longitude, latitude, altitude). So you can locate your object anywhere on the earth relatively accurately by using this tag. 
+The `<ar-geopose>` primitive is argon-aframe's way of locating objects in physical space (of the planet). The `<ar-geopose>` primitive creates an entity with a `referenceframe` component. This component defines the position and/or rotation of the entity by an LLA (longitude, latitude, altitude). So you can locate your object anywhere on the earth relatively accurately by using this tag. 
 
 You can find the longitude and latitude through google maps or through a variety of apps on a smart phone. Some apps will also give your the altitude of a location. 
 
@@ -36,14 +36,16 @@ So if we wanted to make a "poster" and set it in space at this location, we coul
 
 {% highlight html %}
 <body>
+<div id="mydiv"> Welcome to Georgia Tech! </div>
 <ar-scene>
     <ar-geopose id="GT" lla=" -84.398881 33.778463" userotation="false"> 
-        <a-entity billboard fixedsize="20">
-        <a-plane rotation="0 90 0" width="2.9" height="4" src="#buzzpin" transparent="true"></a-plane>
-        <a-entity css-object="div: #mydiv" scale="0.02 0.02 0.02" position="0 4 0"></a-entity>
+        <a-entity billboard>
+        <a-entity css-object="div: #mydiv" scale="0.02 0.02 0.02" position="0 0 0"></a-entity>
         </a-entity>
     </ar-geopose>
 </ar-scene>
 </body>
 
 {% endhighlight %}
+
+In Lesson 2a we saw how to turn html divs into CSSObjects.  This is what we do here. The div whose id is "mydiv" is converted to a CSSObject, scaled and positioned at the origin (0 0 0) of the geopose entity GT. The billboard entity wrapped around mydiv makes sure that the this entity and everything nested inside will always turn to face the camera (so the user can read it). That effect is called "billboarding." 

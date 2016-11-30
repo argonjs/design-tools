@@ -49,9 +49,9 @@
     </div>
 
     <ar-scene>
-      <ar-geopose id="myhometarget" lla="-84.382787 33.777441 310" userotation="false" trigger="radius:23;event:nearDakota"> 
+      <ar-geopose id="myhometarget" lla="-84.396550 33.774352 289" userotation="false" trigger="radius:23;event:nearDakota"> 
           <a-entity  billboard>
-          <a-entity css-object="div: #posdiv" scale=".05 .05 .05" position="0 0 0" showdistance="The distance is:  "></a-entity>
+          <a-entity css-object="div: #posdiv" scale=".05 .05 .05" position="0 0 0" showdistance="Distance:  "></a-entity>
           </a-entity>
       </ar-geopose> 
    
@@ -66,7 +66,7 @@
       if (scene.hasLoaded) {
       setupEvents();
       } else {
-      console.log("waiting for loading of setUpEvents");
+      console.log("waiting to load setUpEvents");
       scene.addEventListener('loaded', setupEvents);
       } 
 
