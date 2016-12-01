@@ -34,19 +34,16 @@ Here is the code to make this happen:
         <h1>AFrame + Argon + Vuforia</h1>
         <h2 id="status">loading scripts...</h2>
       </div>
-
       <div id="loader"></div>
       <div class="loader-section section-left"></div>
       <div class="loader-section section-right"></div>
     </div>
-
     <ar-scene vuforiakey="#vuforiakey"
               vuforiadataset__stonesandchips="src:url(../resources/datasets/StonesAndChips.xml);">
       <a-assets>
          <a-asset-item id="vuforiakey" src="key.txt"></a-asset-item>
          <a-asset-item id="tree" src="../resources/models/tree1/tree1.dae"></a-asset-item>
       </a-assets>
-
       <!-- attach to stones target. x/y in the plane, z up -->
       <ar-frame id="frame" trackvisibility="true" visible="false" parent="vuforia.stonesandchips.stones" position="0 0 0" rotation="0 0 0" trigger="radius:0.35;event:target_trigger">
         <a-entity id="logoscene"  scale="0.005 0.005 0.005" rotation="90 0 0" visible="false">
@@ -73,7 +70,6 @@ Here is the code to make this happen:
                 </a-entity>
               </a-box>
             </a-entity>
-
             <!-- Cross-bar -->
             <a-entity id="cross" rotation="-90 0 0" position="0 8 7.5" scale="1 0 1">
               <a-animation attribute="scale" to="1 0 1" dur="1"></a-animation>
