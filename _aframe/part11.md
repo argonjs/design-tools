@@ -26,7 +26,7 @@ In the remainder of this part of the tutorial, you will learn how to use this ke
 ## The Vuforia License Data File
 To use Vuforia, the native library must be initialized with a valid license key.  The Argon Browser requires each web app to provide this key in an encrypted format, so that programmers are not making their license key visible to others. This also means that only the users of your applications can access Vuforia functionality that is tied to your key, especially services that cost money to use. 
 
-To create an encrypted license key file, you need to use [PGP](https://en.wikipedia.org/wiki/Pretty_Good_Privacy) to encrypt an JSON file with the Argon Browser's public key (available in the public PGP key store as `secure@argonjs.io`).  To simplify the process and ensure a valid JSON file is encrypted, you should use the [Vuforia PGP Encryptor](/start/vuforia-pgp-encryptor) page on this site.
+To create an encrypted license key file, you need to use [PGP](https://en.wikipedia.org/wiki/Pretty_Good_Privacy) to encrypt an JSON file with the Argon Browser's public key (available in the public PGP key store as `secure@argonjs.io`).  To simplify the process and ensure a valid JSON file is encrypted, you should use the [Vuforia PGP Encryptor]({{ site.baseurl }}/start/vuforia-pgp-encryptor) page on this site.
 
 The JSON file contains two things, which you enter in the first two boxes on the web page.  The first box is for your Vuforia license key, which you should paste in exactly as it appears on the Vuforia web site.  Do not add extra spaces or line breaks. 
 
