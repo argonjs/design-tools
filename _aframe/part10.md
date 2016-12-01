@@ -3,30 +3,232 @@ layout: page
 title: 'Lesson 10: Image-tracking'
 ---
 
-Uses the Vuforia Stones database to place the bronze head or other simple object. 
+Geolocation using GPS and other positioning information is one way to locate objects in the world (see Lessons 6 and 7). But geolocaiton is inaccurate and therefore useful only for the large-scale placement of digital objects and information. That is, if you want the user to see a 3D model of a building located on the site where it is going to be constructed, then geolocaiton will work fairly well. If the user is standing some distance from the site, it doesn't matter much whether the model is misplaced every by 10 or more meters. However, if you want to create a table-top AR game where virtual zombies run across the player's desk, then GPS is far too inaccurate. When you want precise registration, you need to use image-tracking. For such purposes, Argon uses the [Vuforia](http://www.vuforia.com) image-tracking system. 
 
-## Vuforia Key
+Vuforia keeps a database of images for your application. When the phone videocamera shows one of the images, Vuforia recognizes it and computes the position and orientation of the phone relative to the image. This allows Argon to position 3D objects with precision (usually in the space above or in front of the image). You can see how this works by running this example. First you need to print out this generic image of stones XXXX (you can also bring up the stones image on a desktop computer screen without printing it out). Then load this application into Argon XXXX.  Now when you point the phone's camera at the stones iamges, you will see a bronze head appear right above the image. 
 
-The `vuforiakey` component can be added to the `<ar-scene>` entity to specify the Vuforia 
-license key, if vuforia is needed.  The property of the component is a reference to a DOM element
-that is either a `<a-asset-item>` or some other DOM element.  If it's an asset item, the 
-key will be stored in a separate file on the server and the path specified as a property of the 
-asset item.  The element is a DOM element, the key will be stored directly in the HTML file.
+Here is the code to make this happen:
 
-```html
-<ar-scene vuforiakey="#vuforiakey">
+{% highlight html %}
+
+<html>
+  <head>
+    <title>Vuforia, with Argon + A-Frame</title>
+    <meta name="description" content="Vuforia, with Argon + A-Frame">
+    <link rel="stylesheet" type="text/css" href="../resources/splash.css">
+    <link rel="stylesheet" type="text/css" href="app.css">
+
+    <script src="../resources/js/aframe.min.js"></script>
+    <script src="../resources/js/argon.min.js"></script>
+    <script src="../build.js"></script>
+    <script src="../resources/js/CSS3DArgonRenderer.js"></script>
+    <script src="../resources/js/CSS3DArgonHUD.js"></script>
+    <script src="../resources/js/aframe-look-at-component.js"></script>
+  </head>
+  <body>
+    <div hidden>
+      <div id="lookattarget" class="bottomScreen">Look at the "stones" target ...</div>
+    </div>  
+    <div id="loader-wrapper">
+      <div class="splashtext">
+        <h1>AFrame + Argon + Vuforia</h1>
+        <h2 id="status">loading scripts...</h2>
+      </div>
+
+      <div id="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+
+    <ar-scene vuforiakey="#vuforiakey"
+              vuforiadataset__stonesandchips="src:url(../resources/datasets/StonesAndChips.xml);">
       <a-assets>
-        <a-asset-item id="vuforiakey" src="key.txt"></a-asset-item>
+         <a-asset-item id="vuforiakey" src="key.txt"></a-asset-item>
+         <a-asset-item id="tree" src="../resources/models/tree1/tree1.dae"></a-asset-item>
       </a-assets>
-</ar-scene>
-```
-Specifying a key causes vuforia to be immediately initialized with that key.
 
-### Properties
+      <!-- attach to stones target. x/y in the plane, z up -->
+      <ar-frame id="frame" trackvisibility="true" visible="false" parent="vuforia.stonesandchips.stones" position="0 0 0" rotation="0 0 0" trigger="radius:0.35;event:target_trigger">
+        <a-entity id="logoscene"  scale="0.005 0.005 0.005" rotation="90 0 0" visible="false">
+          <a-animation attribute="visible" to="false" dur="1"></a-animation>
+          <a-animation attribute="visible" to="true" delay="10" dur="1"></a-animation>
 
-The `vuforiakey` component takes one property.
+          <a-entity id="logo" rotation="0 45 0">
+            <!-- Right side -->
+            <a-entity id="right" rotation="-20 0 0" position="0 0 10.75" scale="1 0 1">
+              <a-animation attribute="scale" to="1 0 1" dur="1"></a-animation>
+              <a-animation attribute="scale" from="1 0 1" to="1 1 1" delay="200" dur="1000"
+                          easing="ease-out"></a-animation>
+              <a-box width="12.5" depth="1" height="30" color="#EF2D5E" position="0 15 0">
 
-| Description                                                                                                                     | Default Value |
-|------------|---------------------------------------------------------------------------------------------------------------------------------|---------------|
-| The DOM element specifying the key. | A DOM element reference |
+                <!-- Left side -->
+                <a-entity id="left" rotation="-140 0 0" position="0 15 0" scale="1 0 1">
+                  <a-animation attribute="scale" to="1 0 1" dur="1"></a-animation>
+                  <a-animation attribute="scale" from="1 0 1" to="1 1 1" delay="800" dur="800"
+                              easing="ease-out"></a-animation>
+                  <a-box width="12.49" depth=".1" height="30" color="#24CAFF"
+                          position="0 15 -.52" shader="flat"></a-box>
+                  <a-box width="12.5" depth="1" height="30" color="#EF2D5E"
+                          position="0 15 0"></a-box>
+                </a-entity>
+              </a-box>
+            </a-entity>
+
+            <!-- Cross-bar -->
+            <a-entity id="cross" rotation="-90 0 0" position="0 8 7.5" scale="1 0 1">
+              <a-animation attribute="scale" to="1 0 1" dur="1"></a-animation>
+              <a-animation attribute="scale" from="1 0 1" to="1 1 1" delay="800" dur="600"
+                          easing="ease-out"></a-animation>
+              <a-box width="12.45" depth=".1" height="14" color="#F2E646"
+                    position="0 7 .52" shader="flat"></a-box>
+              <a-box width="12.5" depth="1" height="14" color="#EF2D5E"
+                    position="0 7 0"></a-box>
+            </a-entity>
+
+            <!-- Clouds -->
+            <a-entity>
+              <!-- Large, foreground -->
+              <a-box color="white" opacity="0.25" width="18" depth="28" height="6">
+                <a-animation attribute="position" from="-20 40 180" to="-20 40 340" delay="0"
+                            dur="36000" easing="linear" repeat="indefinite"
+                            fill="both"></a-animation>
+              </a-box>
+
+              <a-box color="white" opacity="0.65" width="8" depth="12" height="4" visible="false">
+                <a-animation attribute="position" to="25 32 -80" dur="1"></a-animation>
+                <a-animation attribute="position" from="25 32 -80" to="25 32 120" delay="1200"
+                            dur="30000" easing="linear" repeat="indefinite"
+                            fill="both"></a-animation>
+                 <a-animation attribute="visible" to="false" dur="1"></a-animation>
+                 <a-animation attribute="visible" to="true" delay="1200" dur="1"></a-animation>
+             </a-box>
+
+              <!-- Behind the A -->
+              <a-box color="white" opacity="0.75" width="6" depth="9" height="4" visible="false">
+                <a-animation attribute="position" to="10 12 -10" dur="1"></a-animation>
+                <a-animation attribute="position" from="10 12 -10" to="10 12 100" delay="1000"
+                            dur="36000" easing="linear" repeat="indefinite"
+                            fill="both"></a-animation>
+                <a-animation attribute="visible" to="false" dur="1"></a-animation>
+                <a-animation attribute="visible" to="true" delay="1000" dur="1"></a-animation>
+              </a-box>
+
+              <a-box color="white" opacity="0.5" width="8" depth="12" height="3" visible="false">
+                <a-animation attribute="position" to="-20 16 -80" dur="1"></a-animation>
+                <a-animation attribute="position" from="-20 16 -80" to="-20 16 120" delay="200"
+                            dur="52000" easing="linear" repeat="indefinite"
+                            fill="both"></a-animation>
+                <a-animation attribute="visible" to="false" dur="1"></a-animation>
+                <a-animation attribute="visible" to="true" delay="200" dur="1"></a-animation>
+              </a-box>
+
+              <a-box color="white" opacity="0.8" width="8" depth="12" height="3">
+                <a-animation attribute="position" from="0 38 0" to="0 38 120" delay="0"
+                            dur="50000" easing="linear" repeat="indefinite"
+                            fill="both"></a-animation>
+              </a-box>
+
+              <a-box color="white" opacity="0.75" width="5" depth="7" height="3" visible="false">
+                <a-animation attribute="position" to="26 20 -80" dur="1"></a-animation>
+                <a-animation attribute="position" from="26 20 -80" to="26 20 120" delay="2000"
+                            dur="48000" easing="linear" repeat="indefinite"
+                            fill="both"></a-animation>
+                <a-animation attribute="visible" to="false" dur="1"></a-animation>
+                <a-animation attribute="visible" to="true" delay="2000" dur="1"></a-animation>
+              </a-box>
+            </a-entity>
+
+            <!-- Shadow -->
+            <a-entity rotation="-90 0 0">
+              <a-plane id="shadow" width="12.5" height="20" position="0 0 0.1" pivot="0 -10 0"
+                      color="#222222" tranparent="true" opacity="0.5" >
+                <a-animation attribute="scale" to="0 1 0" dur="1"></a-animation>
+                <a-animation attribute="scale" from="0 1 0" to="1 1 1" easing="ease-out"
+                            delay="600" dur="1000" fill="both"></a-animation>
+              </a-plane>
+            </a-entity>
+
+            <!-- Base 
+            <a-entity>
+              <a-plane width="30" height="30" color="#249889" rotation="-90 0 0">
+                <a-animation attribute="position" from="0 -40 0" to="0 0 0" dur="1600"
+                            easing="ease-out"></a-animation>
+              </a-plane>
+            </a-entity>
+    -->
+            <!-- Trees -->
+            <a-entity position="-10 0.2 -10">
+              <a-collada-model id="tree1" src="#tree" scale="2.5 2.5 2.5" visible="false">
+                <a-animation attribute="position" to="0 10 0" dur="1"></a-animation>
+                <a-animation attribute="position" from="0 10 0" to="0 0 0" delay="650" dur="800"
+                            easing="ease-out" fill="backwards"></a-animation>
+                <a-animation attribute="visible" to="false" dur="1"></a-animation>
+                <a-animation attribute="visible" to="true" delay="800" dur="1"></a-animation>
+              </a-collada-model>
+            
+              <a-entity rotation="-90 0 0">
+                <a-plane id="tree1shadow" width="2.5" height="2.5" position="0 0 0.1" 
+                        color="#222222" tranparent="true" opacity="0.5" >
+                  <a-animation attribute="scale" to="0 1 0" dur="1"></a-animation>
+                  <a-animation attribute="scale" from="0 1 0" to="1 1 1" easing="ease-out"
+                              delay="800" dur="1000" fill="both"></a-animation>
+                  <a-animation attribute="visible" to="false" dur="1"></a-animation>
+                  <a-animation attribute="visible" to="true" delay="800" dur="1"></a-animation>
+                </a-plane>
+              </a-entity>
+            </a-entity>
+
+            <a-entity position="-10 0.2 6">
+              <a-collada-model id="tree2" src="#tree" scale="2.5 2.5 2.5" visible="false">
+                <a-animation attribute="position" to="0 10 0" dur="1"></a-animation>
+                <a-animation attribute="position" from="0 10 0" to="0 0 0" delay="400" dur="800"
+                            easing="ease-out" fill="backwards"></a-animation>
+                <a-animation attribute="visible" to="false" dur="1"></a-animation>
+                <a-animation attribute="visible" to="true" delay="400" dur="1"></a-animation>
+              </a-collada-model>
+            
+              <a-entity rotation="-90 0 0">
+                <a-plane id="tree2shadow" width="2.5" height="2.5" position="0 0 0.1" 
+                        color="#222222" tranparent="true" opacity="0.5" >
+                  <a-animation attribute="scale" to="0 1 0" dur="1"></a-animation>
+                  <a-animation attribute="scale" from="0 1 0" to="1 1 1" easing="ease-out"
+                              delay="800" dur="1000" fill="both"></a-animation>
+                  <a-animation attribute="visible" to="false" dur="1"></a-animation>
+                  <a-animation attribute="visible" to="true" delay="800" dur="1"></a-animation>
+                </a-plane>
+              </a-entity>
+            </a-entity>
+
+            <a-entity position="10 0.2 10">
+              <a-collada-model id="tree3" src="#tree" scale="2.5 2.5 2.5" visible="false">
+                <a-animation attribute="position" to="0 10 0" dur="1"></a-animation>
+                <a-animation attribute="position" from="0 10 0" to="0 0 0" delay="600" dur="800"
+                            easing="ease-out" fill="backwards"></a-animation>
+                <a-animation attribute="visible" to="false" dur="1"></a-animation>
+                <a-animation attribute="visible" to="true" delay="600" dur="1"></a-animation>
+              </a-collada-model>
+            
+              <a-entity rotation="-90 0 0">
+                <a-plane id="tree3shadow" width="2.5" height="2.5" position="0 0 0.1" 
+                        color="#222222" tranparent="true" opacity="0.5" >
+                  <a-animation attribute="scale" to="0 1 0" dur="1"></a-animation>
+                  <a-animation attribute="scale" from="0 1 0" to="1 1 1" easing="ease-out"
+                              delay="800" dur="1000" fill="both"></a-animation>
+                  <a-animation attribute="visible" to="false" dur="1"></a-animation>
+                  <a-animation attribute="visible" to="true" delay="800" dur="1"></a-animation>
+                </a-plane>
+              </a-entity>
+            </a-entity>
+
+          </a-entity>
+
+       </a-entity>
+      </ar-frame>      
+    </ar-scene>
+    <script src="app.js"></script>
+  </body>
+</html>
+
+
+{% endhighlight %}
 

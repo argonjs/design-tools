@@ -45,3 +45,34 @@ You will notice that if you try to run the code for this example from your own c
 The website runs entirely in the web client. No information you enter is sent out of your browser, and the JSON file and encrypted license data are generated as you type and appear in the remaining two text boxes on the web page. You do not need to do anything with the *License Data (JSON)* box, it is shown so you can see what the JSON file looks like.  
 
 When you are done, copy the contents of the *License Data (encrypted)* box.  You will need to add that to the web application so it can be passed to Argon to initialize Vuforia for your web page.
+
+
+## Making your Argon image-tracking application
+
+
+## Vuforia Key
+
+The `vuforiakey` component can be added to the `<ar-scene>` entity to specify the Vuforia 
+license key, if vuforia is needed.  The property of the component is a reference to a DOM element
+that is either a `<a-asset-item>` or some other DOM element.  If it's an asset item, the 
+key will be stored in a separate file on the server and the path specified as a property of the 
+asset item.  The element is a DOM element, the key will be stored directly in the HTML file.
+
+```html
+<ar-scene vuforiakey="#vuforiakey">
+      <a-assets>
+        <a-asset-item id="vuforiakey" src="key.txt"></a-asset-item>
+      </a-assets>
+</ar-scene>
+```
+Specifying a key causes vuforia to be immediately initialized with that key.
+
+### Properties
+
+The `vuforiakey` component takes one property.
+
+| Description                                                                                                                     | Default Value |
+|------------|---------------------------------------------------------------------------------------------------------------------------------|---------------|
+| The DOM element specifying the key. | A DOM element reference |
+
+
