@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 'Lesson 11: Creating and using your own image database
+title: 'Lesson 11: Creating and using your own image database'
 ---
 
 ## Vision-based Tracking and Vuforia
