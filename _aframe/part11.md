@@ -56,7 +56,7 @@ that is either a `<a-asset-item>` or some other DOM element.  If it's an asset i
 key will be stored in a separate file on the server and the path specified as a property of the 
 asset item.  The element is a DOM element, the key will be stored directly in the HTML file.
 
-{% highlight html %
+{% highlight html %}
 <ar-scene vuforiakey="#vuforiakey">
       <a-assets>
         <a-asset-item id="vuforiakey" src="key.txt"></a-asset-item>

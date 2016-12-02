@@ -7,9 +7,7 @@ Geolocation using GPS and other positioning information is one way to locate obj
 
 Vuforia keeps a database of images for your application. When the phone videocamera shows one of the images, Vuforia recognizes it and computes the position and orientation of the phone relative to the image. This allows Argon to position 3D objects with precision (usually in the space above or in front of the image). You can see how this works by running this example. First you need to print out this generic image of stones XXXX (you can also bring up the stones image on a desktop computer screen without printing it out). Then load this application into Argon XXXX.  Now when you point the phone's camera at the stones iamges, you will see a bronze head appear right above the image. 
 
-Here is the code to make this happen:
-
-Start with the usual scripts in the header. Note that we have a special splash.css file to create a splash screen while assets are loading the image database is initialized. 
+Here is the code to make this happen. Start with the usual scripts in the header. Note that we have a special splash.css file to create a splash screen while assets are loading the image database is initialized. 
 
 {% highlight html %}
 
