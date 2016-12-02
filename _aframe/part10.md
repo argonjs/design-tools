@@ -26,7 +26,7 @@ Here is the code to make this happen. Start with the usual scripts in the header
   </head>
   {% endhighlight %}
   
-  Then in the body of the page  we create some divs. The first set instructs the to point the phone at the stones target. This will appear at the body of the screen. The other divs for for creating an animated splash screen whil the image database is being initialized. 
+  Then in the body of the page  we create some divs. The first set instructs the user to point the phone at the stones target. This will appear at the bottom of the screen. The other divs for creating an animated splash screen while the image database is being initialized. 
   
   {% highlight html %}
 
@@ -47,6 +47,7 @@ Here is the code to make this happen. Start with the usual scripts in the header
 {% endhighlight %}
 
   Here are the most important lines.  The `<ar-scene>` tag here has two components: one give the vuforia key; the other tells the system what image data set is being used. 
+  
   {% highlight html %}
     <ar-scene vuforiakey="#vuforiakey"
               vuforiadataset__stonesandchips="src:url(../resources/datasets/StonesAndChips.xml);">
