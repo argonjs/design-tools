@@ -3,8 +3,6 @@ layout: page
 title: 'Lesson 11: Creating and using your own image database
 ---
 
-Creating and using your own image database with Vuforia
-
 ## Vision-based Tracking and Vuforia
 The Argon Browser includes a computer-vision tracking system called [Vuforia](http://www.vuforia.com). Vuforia is a platform native SDK that can find and precisely track where images and objects are relative to the camera.  argon.js can represents these tracked *targets* as frames of reference expressed relative to the camera on the device (which is what we also use as the location of the user).  This means that anything tracked by Vuforia can have its pose computed relative to any other frame of reference Argon knows about, and attaching content to objects tracked by Vuforia is done in exactly the same way that content was attached to the world in the first parts of this tutorial.
 
