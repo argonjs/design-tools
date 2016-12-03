@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>Hello, World! A-Frame</title>
+	<meta name="apple-mobile-web-app-capable" content="yes">     
+    <meta name="description" content="Hello, World! Argon + A-Frame">
+    <script src="../resources/js/aframe.min.js"></script>
+  </head>
+  <body>
+   	<a-scene>
+   	<a-assets>
+    <video id="mysound" autoplay loop="true" src="isabella.mp3">
+  	</a-assets>
+  	<a-sphere position="0 1.25 -1" radius="1.25" color="#EF2D5E"></a-sphere>
+	<a-entity id="river" geometry="primitive: plane" material="color: blue" position="-10 0 0" sound="#mysound; autoplay: true"></a-entity>  	
+  	<a-scene>
+  </body>
+</html>
+
