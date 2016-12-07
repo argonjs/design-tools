@@ -14,10 +14,13 @@
      <ar-scene>
 
 	  <a-assets>
-	    <a-asset-item id="bust" src="model/Head_Decimated.dae"></a-asset-item>	    
+	    <a-asset-item id="bust-obj" src="model/Head_Decimated.obj"></a-asset-item>
+	    <a-asset-item id="bust-mtl" src="model/Head_Decimated.mtl"></a-asset-item> 
+	    
+	    
 	  </a-assets>
 	  
-	  <a-entity  position= " 0 0 8" scale= ".01 .01 .01" rotation="0 45 0" collada-model=#bust></a-entity> 
+	  <a-entity  position= " 0 0 8" scale= ".01 .01 .01" rotation="0 45 0" obj-model="obj: #bust-obj; mtl: #bust-mtl"></a-entity> 
 	  
       </a-entity>
     </ar-scene>
