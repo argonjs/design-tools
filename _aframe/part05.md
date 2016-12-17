@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 'Lesson 4: Adding an Eventlistener'
+title: 'Lesson 5: Adding an Eventlistener'
 ---
 > Download [Argon4](http://argonjs.io/argon-app) and the [Tutorial Source Code](https://github.com/argonjs/design-aids/tree/gh-pages/code). <br> This tutorial uses the *event* and *resources* directories.<br> **[Demo in Argon4](https://github.com/argonjs/design-aids/tree/gh-pages/code/event/)**
 

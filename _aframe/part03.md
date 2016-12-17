@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 'Lesson 2a: CSSObjects'
+title: 'Lesson 3: CSSObjects'
 ---
 > Download [Argon4](http://argonjs.io/argon-app) and the [Tutorial Source Code](https://github.com/argonjs/design-aids/tree/gh-pages/code). <br> This tutorial uses the *cssobject* and *resources* directories.<br> **[Demo in Argon4](https://github.com/argonjs/design-aids/tree/gh-pages/code/cssobject/)**
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 'Lesson 5: Adding video and audio'
+title: 'Lesson 6: Adding video and audio'
 ---
 > Download [Argon4](http://argonjs.io/argon-app) and the [Tutorial Source Code](https://github.com/argonjs/design-aids/tree/gh-pages/code). <br> This tutorial uses the *video* and *resources* directories.<br> **[Demo in Argon4](https://github.com/argonjs/design-aids/tree/gh-pages/code/video/)**
 

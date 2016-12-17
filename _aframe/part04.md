@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 'Lesson 3: Creating a cursor'
+title: 'Lesson 4: Creating a cursor'
 ---
 > Download [Argon4](http://argonjs.io/argon-app) and the [Tutorial Source Code](https://github.com/argonjs/design-aids/tree/gh-pages/code). <br> This tutorial uses the *cursor* and *resources* directories.<br> **[Demo in Argon4](https://github.com/argonjs/design-aids/tree/gh-pages/code/cursor/)**
 
