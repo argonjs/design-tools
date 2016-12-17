@@ -26,7 +26,7 @@ Once you have the equirectangular image as a .jpg or .png file, then you can cre
 </html>
 {% endhighlight %}
 
-You attach two components to the `<ar-scene>`:  `desiredreality` and `panorama`. Let's take the second component first. `panorama` has three attributes. The source is the image file (Centennial Olympic Park in Atlanta Georgia USA) The lla specified the geoposition where the panorama was taken (you can find this on Google Maps and elsehere). Right now the geopositio information is just stored, but it could be useful in an application later. The `initial` attribute indicates that this panorama is to be displayed in the background when the application starts up. Since it is the only panorama in this example, there is no other choice. However, you can declare multiple panoramas in this component and switch among them (see below). In that case the `initial` attribute becomes useful.
+You attach two components to the `<ar-scene>`:  `desiredreality` and `panorama`. Let's take the second component first. `panorama` has three attributes. The source is the image file (Centennial Olympic Park in Atlanta Georgia USA) The lla specified the geoposition where the panorama was taken (you can find this on Google Maps and elsehere). Right now the geoposition information (long and lat) is just stored, but it could be useful in an application later. The `initial` attribute indicates that this panorama is to be displayed in the background when the application starts up. Since it is the only panorama in this example, there is no other choice. However, you can declare multiple panoramas in this component and switch among them (see below). In that case the `initial` attribute becomes useful.
 
 
 ## Putting a-frame objects in the panoramic reality  
@@ -89,7 +89,9 @@ The body begins with a menu and the `<ar-scene>` tag.
     </ar-scene>
 {% endhighlight %}    
 
-In the `<ar-scene>` tag above, the `desiredreality`component points again to the panorama reality file. In this case there are multiple panorama components instead of one. The name extension (after the `__`) becomes the identifier for that panorama. (aqui is the Georgia Aquarium; cent is Centennial Olympic Park; high is the High Museum; pied is Piedmont Park – all in Atlanta, Georgia.)
+In the `<ar-scene>` tag above, the `desiredreality` component points again to the panorama reality file. But in this case there are four panorama components instead of one. The name extension (after the `__`) becomes the identifier for that panorama. (aqui is the Georgia Aquarium; cent is Centennial Olympic Park; high is the High Museum; pied is Piedmont Park – all in Atlanta, Georgia.)
+
+The following section of the code creates the menu that switches between the four panoramas and associates a click event handler with each of the four panoramas:
 
 {% highlight html %}    
     
@@ -142,43 +144,8 @@ In the `<ar-scene>` tag above, the `desiredreality`component points again to the
 </html>
 {% endhighlight %}
 
-The following section of the code creates the menu that switches between the four panoramas and associates a click event handler with each of the four panoramas:
 
-{% highlight html %}
-    var panoramas = [
-        { text: 'Georgia Aquarium', name: 'aqui' },
-        { text: 'Centennial Park', name: 'cent' },
-        { text: 'High Museum', name: 'high' },
-        { text: 'Piedmont Park', name: 'pied'}
-      ];
-
-      var currentPanorama;
-      // get the menu element
-      var menu = document.getElementById('menu');
-      // add buttons to the menu for each panorama
-      panoramas.forEach(function (p) {
-          var button = document.createElement('button');
-          button.textContent = p.text;
-          menu.appendChild(button);
-          // when a button is tapped, have the reality fade in the corresponding panorama
-          button.addEventListener('click', function () {
-              arScene.sceneEl.emit('showpanorama', { name: p.name });     
-          });
-      });
-      
-      arScene.addEventListener('argon-initialized', function(evt) {
-        arScene.sceneEl.hud.appendChild(menu);
-        arScene.sceneEl.argonApp.focusEvent.addEventListener(function () {
-            document.getElementById('menu').style.display = 'block';
-        });
-        arScene.sceneEl.argonApp.blurEvent.addEventListener(function () {
-            document.getElementById('menu').style.display = 'none';
-        });      
-      });
-
-{% endhighlight %}
-
-In the code above, note the `arScene.addEventListener`. You need to make sure that argon is initialized you doing any further actions, such as appending the menu to the scene. 
+In the code above, note the `arScene.addEventListener`. You need to make sure that argon is initialized before you begin any further actions, such as appending the menu to the scene. 
 
 ## The Panorama Reality
 
