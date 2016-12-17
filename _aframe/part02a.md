@@ -2,6 +2,8 @@
 layout: page
 title: 'Lesson 2a: CSSObjects'
 ---
+> Download [Argon4](http://argonjs.io/argon-app) and the [Tutorial Source Code](https://github.com/argonjs/design-aids/tree/gh-pages/code). <br> This tutorial uses the *cssobject* and *resources* directories.<br> **[Demo in Argon4](https://github.com/argonjs/design-aids/tree/gh-pages/code/cssobject/)**
+
 
 In Lesson 2 we saw how to place boxes and other geometric objects in the scene. But what if you wish to put text and images in the scene as well: that is, the materials you are used to creating and manipulating on a web page using html and css? Suppose you want to place a label reading "Argon + Aframe" above a box in the space. We can do this by using CSSObjects. 
 

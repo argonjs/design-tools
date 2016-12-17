@@ -2,6 +2,9 @@
 layout: page
 title: 'Lesson 4: Adding an Eventlistener'
 ---
+> Download [Argon4](http://argonjs.io/argon-app) and the [Tutorial Source Code](https://github.com/argonjs/design-aids/tree/gh-pages/code). <br> This tutorial uses the *event* and *resources* directories.<br> **[Demo in Argon4](https://github.com/argonjs/design-aids/tree/gh-pages/code/event/)**
+
+
 
 In lesson 3 we saw an example of an eventlistener added to a component.  Here in Lesson 4 we describe eventlisteners in more detail, because event listeners are very useful in a variety of places in argon-aframe code, not just for the cursor. 
 

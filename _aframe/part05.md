@@ -2,6 +2,9 @@
 layout: page
 title: 'Lesson 5: Adding video and audio'
 ---
+> Download [Argon4](http://argonjs.io/argon-app) and the [Tutorial Source Code](https://github.com/argonjs/design-aids/tree/gh-pages/code). <br> This tutorial uses the *video* and *resources* directories.<br> **[Demo in Argon4](https://github.com/argonjs/design-aids/tree/gh-pages/code/video/)**
+
+
 
 Aframe itself has a [video primtiive}(https://aframe.io/docs/0.3.0/primitives/a-video.html) that you can use to add video to a scene. To use it you load the video as an asset and then position the video primitive itself into the scene. This same tag will work in argon-aframe. It will play a video on a plane positioned in space. 
 
