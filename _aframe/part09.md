@@ -63,7 +63,7 @@ Now the sphere, box, cylinder, and plane will all appear inside the space with t
 
 Here is a more complex example that features four different panoramas. The user switches between them by pressing a button at the buttom of the screen.
 
-
+Here are the links to various scripts as usual:
 {% highlight html %}
 <html>
   <head>
@@ -77,10 +77,22 @@ Here is a more complex example that features four different panoramas. The user 
     <script src="../resources/js/aframe-look-at-component.js"></script>
 	  <link rel="stylesheet" type="text/css" href="../resources/style.css">
   </head>
+
+{% endhighlight %}
+
+The body begins with a menu and the `<ar-scene>` tag.
+
+{% highlight html %}  
   <body>
     <div id="menu" class="menu"></div>
     <ar-scene desiredreality="src:url(../resources/reality/panorama/index.html);" panorama__aqui="src:url(panoramas/aqui.jpg);lla:-84.3951 33.7634 206;initial:true;" panorama__cent="src:url(panoramas/cent.jpg);lla:'-84.3931 33.7608 309';" panorama__high="src:url(panoramas/high.jpg);lla:'-84.38584 33.79035 289';" panorama__pied="src: url(panoramas/pied.jpg);lla:'-84.37427 33.78577 271';">
     </ar-scene>
+{% endhighlight %}    
+
+In the `<ar-scene>` tag above, the `desiredreality`component points again to the panorama reality file. In this case there are multiple panorama components instead of one. The name extension (after the `__`) becomes the identifier for that panorama. (aqui is the Georgia Aquarium; cent is Centennial Olympic Park; high is the High Museum; pied is Piedmont Park – all in Atlanta, Georgia.)
+
+{% highlight html %}    
+    
     <script>
       var arScene = document.querySelector('ar-scene');
       var content = document.querySelector('#helloworld');
@@ -130,18 +142,7 @@ Here is a more complex example that features four different panoramas. The user 
 </html>
 {% endhighlight %}
 
-Let's look in detail at the `<ar-scene>` tag above:
-
-
-{% highlight html %}
-    <ar-scene desiredreality="src:url(../resources/reality/panorama/index.html);" panorama__aqui="src:url(panoramas/aqui.jpg);lla:-84.3951 33.7634 206;initial:true;" panorama__cent="src:url(panoramas/cent.jpg);lla:'-84.3931 33.7608 309';" panorama__high="src:url(panoramas/high.jpg);lla:'-84.38584 33.79035 289';" panorama__pied="src: url(panoramas/pied.jpg);lla:'-84.37427 33.78577 271';">
-    </ar-scene>
-{% endhighlight %}
-
-It has four panorama components, one for each of the four panos. The name extension (after the `__`) becomes the identifier for that panorama.
-
-
-This section of the code creates the menu that swtiches between the four panoramas and associates a click event handler with each of the four panoramas:
+The following section of the code creates the menu that switches between the four panoramas and associates a click event handler with each of the four panoramas:
 
 {% highlight html %}
     var panoramas = [
@@ -177,11 +178,11 @@ This section of the code creates the menu that swtiches between the four panoram
 
 {% endhighlight %}
 
-
+In the code above, note the `arScene.addEventListener`. You need to make sure that argon is initialized you doing any further actions, such as appending the menu to the scene. 
 
 ## The Panorama Reality
 
-The Panorama Reality is one of three realities (backgrounds) that are currently available. The other two are the standard video reality (provided by the phone's camera) and the Google streetview. This is a panorama provided by accessing Google streetview for a particular location (long and lat).  
+The Panorama Reality is one of three realities (backgrounds) that are currently available. The other two are the standard video reality (provided by the phone's camera) and the Google Streetview. This is a panorama provided by accessing Google Streetview for a particular location (long and lat).  
 
 
 
