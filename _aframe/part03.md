@@ -1,61 +1,59 @@
 ---
 layout: page
-title: 'Lesson 3: Creating a cursor'
+title: 'Lesson 2a: CSSObjects'
 ---
-> Download [Argon4](http://argonjs.io/argon-app) and the [Tutorial Source Code](https://github.com/argonjs/design-aids/tree/gh-pages/code). <br> This tutorial uses the *cursor* and *resources* directories.<br> **[Demo in Argon4](https://github.com/argonjs/design-aids/tree/gh-pages/code/cursor/)**
+> Download [Argon4](http://argonjs.io/argon-app) and the [Tutorial Source Code](https://github.com/argonjs/design-aids/tree/gh-pages/code). <br> This tutorial uses the *cssobject* and *resources* directories.<br> **[Demo in Argon4](https://github.com/argonjs/design-aids/tree/gh-pages/code/cssobject/)**
 
 
-In an html page, the user typically selects an item by clicking on it with the cursor. You can also add a cursor to the 3D world of argon-aframe. You add the cursor to the camera entity. The cursor will appear at a place you specify relative to the center of the screen. This cursor shape will move as the user moves the phone. (If the user is wearing Google cardboard, then turning her head will move the cursor.) The cursor can be activated by a click user or simply by keeping it steady over an object for a length of time (the fuse time). Look at the example below:
+In Lesson 2 we saw how to place boxes and other geometric objects in the scene. But what if you wish to put text and images in the scene as well: that is, the materials you are used to creating and manipulating on a web page using html and css? Suppose you want to place a label reading "Argon + Aframe" above a box in the space. We can do this by using CSSObjects. 
 
+Showing graphic objects on a computer screen is called "rendering," In order to render objects you need (not surprisingly) a renderer, and there are different kinds of renderers. For Argon-aframe there are two: the WebGL renderer and a CSS renderer. The names WebGL and CSS refer to different graphic systems, and Argon supports both systems. 
+
+The previous Lesson 2 showed you how to create simple 3D content for the WebGL renderer such as `a-box`. Now we create the label as a CSSObject. 
+
+First, here is the css that defines the class `boxface`. It can go in the `<head>` of the html file (along with the script tages we have in lesson 2). 
+ 
 {% highlight html %}
-
-  <body>
+.boxface {
+    opacity: 0.5;
+    width: 90px;
+    height: 90px;
+    font-size: 25px;
+    text-align: center;
+    color: black;
+    background: rgba(127,255,255,0.85);
+    outline: 5px solid rgba(12,25,25,1.0);
+    border: 0px;
+    margin-bottom: 0px;
+    padding: 0px 0px;
+}
+{% endhighlight %}
+ 
+Now in the `<body>` of the html file, we put:  
+{% highlight html %}
+    <div hidden>
+      <div id="mydiv" class="boxface">Argon<br>+<br>AFrame</div>
+    </div>
     <ar-scene>
       <a-entity id="helloworld" position="0 -1 -8">
-        <a-sphere position="0 1.25 -1" cursor-listener radius="1.25" color="#EF2D5E" ></a-sphere>
-      </a-entity>
-      <ar-camera>
-        <a-entity id="myCursor" cursor="fuse:true; fuse-timeout: 1000"
-                    position="0 0 -0.1"
-                    geometry="primitive:ring; radiusInner: 0.001; radiusOuter: 0.0015"
-                    material="color: #2E3A87; opacity:0.3;">          
+        <a-box position="-1 0.5 1" rotation="0 45 0" width="1" 
+               height="1" depth="1"  color="#4CC3D9" ></a-box>
+        <a-entity position="0 3 0" rotation="0 45 0">
+            <a-entity css-object="div: #mydiv" scale="0.01 0.01 0.01" rotation="0 0 0" position="0 0 0.5">
+            </a-entity>
         </a-entity>
-      </ar-camera>
+      </a-entity>
     </ar-scene>
+{% endhighlight %}
 
- {% endhighlight %}   
- 
- This simple `<ar-scene>` consists of two things: a sphere and the ar-camera. The camera has a cursor entity attached to it. The cursor entity is to set "fuse," which means that it will function to select an object by just keeping the cursor over the object, in this case for 1000 miliseconds = 1 sec. The other components of the cursor entity define how it looks: a ring of a certain color and 30% opacity.  (You can define the shape and color of your own cursor, if you don't like the ring.)
- 
-At this point the cursor is defined, but it doesn't have any effect on the objects in the scene. In order to make the cursor have an effect, we need to add javascript that "listens" for the cursor when it selects an object. We do this by registering a new "component". You can learn more about components in Lesson 12. They are a key feature of working with aframe (and argon-aframe).  Here you can see how this particular component works. The new component is called `cursor-listener`. It is coded in a script tag and "registered with aframe. Then this component can be attached to the sphere, as you see in this line from the html above:  
+Most of these tags are familiar from Lesson 2. You will recognize `<ar-scene>` to define the whole scene as well as the first `<a-entity>` and the `<a-box>`.  Below that you will see nested entity tags. `<a-entity position="0 3 0">` positions the whole nested assemble at x = 0;y=3;z=0. This will put the label 3 meters above origin (because y indicate up and down) and so above the box; it also rotates the label by 45 degrees along the y axis (so we can read its text). 
+
+The next entity is the one that actually defines the CSSObject:
 
 {% highlight html %}
-
-<a-sphere position="0 1.25 -1" cursor-listener radius="1.25" color="#EF2D5E" ></a-sphere>
-
+   <a-entity css-object="div: #mydiv" scale="0.01 0.01 0.01" rotation="0 0 0" position="0 0 0.5"></a-entity>
 {% endhighlight %}
 
- The sphere will react to the click-event, the mouseeneter-event, and the mouseleave-event. These events make the sphere reactive to the cursor. Here is the component that makes this possible: 
+The main thing to notice is that the `css-object` component takes a div as its parameter. You see the div id is `#mydiv` and `mydiv` is defined as the id of the div shown in the code above: it is the div that holds the text `Argon<br>+<br>+Aframe`. That is the div that will be transformed into a 3D CSSObject, which means that it will be rendered in the 3D space with the scale, rotation, and relative positions indicated by the other components in the tag.  
 
-{% highlight html %}   
-
-    <script>
-      AFRAME.registerComponent('cursor-listener', {
-        init: function () {
-          this.el.addEventListener('click', function (evt) {
-            console.log('I was clicked at: ', evt.detail.intersection.point);
-          });
-          this.el.addEventListener('mouseenter', function (evt) {
-            this.setAttribute('material', 'opacity', 0.5);
-          });
-          this.el.addEventListener('mouseleave', function (evt) {
-            this.setAttribute('material', 'opacity', 1.0);
-          });
-        }
-      });
-
-{% endhighlight %}
-
-The function defined in the component is executed once when the component is initialized for a particular object. It adds three eventListeners (for eventListeners see Lesson 4). One event fires when the user clicks on the particular object. When that happens the program prints the message 'I was clicked at: ' together with the point where the cursor indicated contact with the object.  The other two events fire when the cursor starts hovering over the object or moves away from the object. Hovering over the object will cause it to become translucent (opacity = .5) Moving away will cause the object to return to its full opacity. 
-
-Obviously you can put any javascript code you want into these events. You could make audio play when the user clicks on the sphere, or you can start the sphere rotating, or display a text on the screne. This is how you introduce interactivity into the scene. 
+A note about size: The CSS elements are sized such at 1 units (1px in this example) is 1 meter, so conventionally sized CSS elements will be huge. The CSS class `boxface` above is 90 pixels by 90 pixels, which would translate to 90 meters by 90 meters. The CSSObject has been scaled to .01 in all dimensions, which brings the box down to .9 meters in height and width.'
