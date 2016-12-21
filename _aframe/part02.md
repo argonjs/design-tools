@@ -5,7 +5,7 @@ title: 'Lesson 2: Writing a simple Argon-aframe experience'
 
 > Download [Argon4](http://argonjs.io/argon-app) and the [Tutorial Source Code](https://github.com/argonjs/design-aids/tree/gh-pages/code). <br> This tutorial uses the *basic* and *resources* directories.<br> **[Demo in Argon4](https://github.com/argonjs/design-aids/tree/gh-pages/code/basic/)**
 
-Argon-aframe is built on top of the aframe framework and allows you to make use of much of the exisitng aframe code. We will not go through aframe itself. For an explanation of the aframe entities, please consult the [aframe documentation](https://aframe.io/docs/0.3.0/introduction/). Instead, we will start by showing you how easy it is to "wrap" argon-aframe around aframe itself.  
+Argon-aframe is built on top of the aframe framework and allows you to make use of much of the exisitng aframe code. We will not go through aframe itself. For an explanation of the aframe entities, please consult the [aframe documentation](https://aframe.io/docs/0.3.0/introduction/). Instead, we will start by showing you how easy it is to "wrap" Argon-aframe around aframe itself.  
 
 Here is the code for the Hello World example in aframe itself:
 
@@ -34,9 +34,9 @@ Here is the code for the Hello World example in aframe itself:
 </html>
 {% endhighlight %}
 
-This aframe example creates an `<a-scene>` in the body of the html page. Inside the `<a-scene>` there are four 3D entities: a sphere, a box, a cylinder, and a plane. (There is also a color for the sky and a positioning of the 3D camera. But for the Argon version, we don't need sky because Argon will use the device's own videocamera to provide the physical world as the background. Also, we don't need to specify the 3D camera for this example.) 
+This aframe example creates an `<a-scene>` in the body of the html page. Inside the `<a-scene>` there are four 3D entities: a sphere, a box, a cylinder, and a plane. (There is also a color for the sky and a positioning of the 3D camera. But for the Argon version, we don't need the sky because Argon will use the device's own videocamera to provide the physical world as the background. Also, we don't need to specify the 3D camera for this example.) 
 
-For the Argon version, we replace the `<a-scene>` tag with the `<ar-scene>` tag. Then we  group the 3D entities under another `<a-entity>` with the id "helloworld" and a position.  
+For the Argon version, we replace the `<a-scene>` tag with the `<ar-scene>` tag. Then we group the 3D entities under another `<a-entity>` with the id "helloworld" and a position.  
     
 Here is the code:
 
@@ -63,4 +63,4 @@ Here is the code:
 </html>
 {% endhighlight %}
 
-In addition, you see in the `<head>` that we need to add two additional scripts for the argon javascript.To view this example, you need to serve it to the Argon browser running on iOS device. If you view it in a regular browser, you will simply see a white background, because the background videoreality can only be provided by Argon. 
+In addition, you see in the `<head>` that we need to add two additional scripts for the Argon javascript. To view this example, you need to serve it to the Argon browser running on iOS device. If you view it in a regular browser, you will simply see a white background, because the background video reality can only be provided by Argon. 
