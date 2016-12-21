@@ -26,7 +26,7 @@ In an html page, the user typically selects an item by clicking on it with the c
  
  This simple `<ar-scene>` consists of two things: a sphere and the ar-camera. The camera has a cursor entity attached to it. The cursor entity is to set "fuse,"—which means that it will select an object by just keeping the cursor over the object, in this case for 1000 miliseconds = 1 sec. The other components of the cursor entity define how it looks: a ring of a certain color and 30% opacity.  (You can define the shape and color of your own cursor, if you don't like the ring.)
  
-At this point the cursor is defined, but it doesn't have any effect on the objects in the scene beyond just selectiong. In order to make the cursor have an effect, we need to add javascript that "listens" for the cursor when it selects an object. We do this by registering a new "component".  This particular component is called `cursor-listener`. It is coded in a script tag and "registered" with aframe (see below). Once registered, the component can be attached to any appropriate object, in this case the sphere, as you see in this line from the html above:  
+At this point the cursor is defined, but it doesn't have any effect on the objects in the scene beyond just selection. In order to make the cursor have an effect, we need to add javascript that "listens" for the cursor when it selects an object. We do this by registering a new "component".  This particular component is called `cursor-listener`. It is coded in a script tag and "registered" with aframe (see below). Once registered, the component can be attached to any appropriate object, in this case the sphere, as you see in this line from the html above:  
 
 {% highlight html %}
 
@@ -57,6 +57,6 @@ At this point the cursor is defined, but it doesn't have any effect on the objec
 
 The function defined in the component is executed once when the component is initialized for a particular object. It adds three eventListeners (for eventListeners see Lesson 5). One event fires when the user clicks on the particular object. When that happens the program prints the message 'I was clicked at: ' together with the point where the cursor indicated contact with the object.  The other two events fire when the cursor starts hovering over the object or moves away from the object. Hovering over the object will cause it to become translucent (opacity = .5) Moving away will cause the object to return to its full opacity. 
 
-You can put any javascript code you want into these events. You could make audio play when the user clicks on the sphere, or you can start the sphere rotating, or display a text on the screne. This is how you introduce interactivity into the scene. 
+You can put any javascript code you want into these events. You could make audio play when the user clicks on the sphere, or you can start the sphere rotating, or display a text on the screen. This is how you introduce interactivity into the scene. 
 
 You can learn more about components in Lesson 12. They are a key feature of working with aframe (and Argon-aframe).
