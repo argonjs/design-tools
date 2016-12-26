@@ -16,6 +16,9 @@
     <div hidden>
       <div id="lookattarget" class="bottomScreen">Look at the "stones" target ...</div>
     </div>  
+    <div id="videodiv">
+    	<video id="videoinDiv"> </video> 
+	</div>   
     <div id="loader-wrapper">
       <div class="splashtext">
         <h1>AFrame + Argon + Vuforia</h1>
@@ -28,8 +31,9 @@
     </div>
 
     <script>
-        var theVideo = document.createElement('video');
-        var playing = false;
+       /* var theVideo = document.createElement('video');*/
+        var theVideo;
+        var playing;
         
         AFRAME.registerComponent('videoplay', {
         schema: { 
@@ -38,6 +42,8 @@
 
         init: function () {
           var self = this;
+          theVideo = doc.getElementById("videoinDiv");
+          playing = false;
           theVideo.src = 'skurpulver.mp4';
           theVideo.autoPlay = true;
           theVideo.load();
@@ -85,9 +91,13 @@
 
       <!-- attach to stones target. x/y in the plane, z up -->
       <ar-frame id="frame" videoplay="true" trackvisbility="true" visible="false" parent="vuforia.stonesandchips.stones" position="0 0 0" rotation="0 0 0">
-       <a-entity scale="1 1 1">
+	 	<a-entity position="0 3 0" rotation="0 45 0">
+            <a-entity css-object="div: #videodiv" scale="0.01 0.01 0.01" rotation="0 0 0" position="0 0 0">
+            </a-entity>
+        </a-entity>    
+      /* <a-entity scale="1 1 1">
         <a-entity  position= " 1 1 -4" rotation="45 0 0" collada-model=#bust></a-entity> 
-       </a-entity>
+       </a-entity>*/
       </ar-frame>      
     </ar-scene>
     <script src="app.js"></script>
