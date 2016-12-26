@@ -29,8 +29,6 @@
 
     <script>
         var theVideo = document.createElement('video');
-        var playing = false;
-        
         AFRAME.registerComponent('videoplay', {
         schema: { 
           default: true
@@ -41,8 +39,7 @@
           theVideo.src = 'skurpulver.mp4';
           theVideo.autoPlay = true;
           theVideo.load();
-          console.log("initializing the video")
-          playing = 0;
+          console.log("initializing the vdieo")
           this.el.addEventListener('referenceframe-statuschanged', function(evt) {
               self.updatePlayPause(evt);
           });
@@ -50,16 +47,11 @@
         },
 
         updatePlayPause: function (evt) {
-          if (playing) { 
-          	console.log("pausing the video");
-          	theVideo.pause();
-          	playing = false;
-          }
-          else {
-          	console.log("playing the video");
-          	theVideo.play();
-          	playing = true;
- 			}	 
+          console.log("play the video");
+          theVideo.play();
+        /*  if (this.data && evt.detail.target === this.el) {
+            this.el.object3D.visible = evt.detail.found; 
+          }*/
         },
 
         update: function () {
