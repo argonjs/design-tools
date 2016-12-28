@@ -19,20 +19,7 @@ A common need in AR and VR is to know when the viewer is within a certain distan
 
 In this example, when the user (camera) is within 100 meters of the specified LLA, the event will be emitted.  Similarly, when the user (camera) moves further than 100 meters away, the event will be emitted again.  The event detail can be used to decide if it was an enter or exit event.
 
-Multiple triggers can be attached to an entity.  If `trigger__name` is attached, the event emitted will name `name` in the event detail `name` property.
+So in general the `radius` property is the distnace from the entity to the camera in meters. The `event` property give the name of the event. (The default name is "trigger".) When the trigger is fired, it will emit an event with that name. The trigger event will have the following details: name: string, inside: boolean, distanceSquared: number.
 
-### Properties
-
-| Property | Description                                                                                                                     | Default Value |
-|-----------|----------------------------------------------------------------------------------------------------------------------|---------------|
-|raduis|The distance of the trigger point from the entity to the camera. | 1 |
-|event| The name of the event to emit.| "trigger" |
-
-### Events
-
-When a trigger is fired, it will emit the following event.
-
-| Name         | Description                         |
-|--------------|-------------------------------------|
-| `eventname`  | A trigger event containing event detail {name: string, inside: boolean, distanceSquared: number} | 
+Multiple triggers can be attached to an entity.  If `trigger__name` is attached, the event emitted will have `name` in the event detail `name` property.
 

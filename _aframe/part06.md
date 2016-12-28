@@ -21,3 +21,5 @@ TRY THIS in argon
 For audio, aframe has a sound component that you can attach to entities. See the [aframe documentation](https://aframe.io/docs/0.3.0/components/sound.html). This component should work on Argon-aframe just as it does in aframe. 
 
 If these entities and components don't give you the capabilities that you need, you can also create your own component (See Lesson 12) that can use the html audio and video tags to have more control over the presentation and interaction with the media. 
+
+There are limitations to playing a video on iOS devices. See how aframe handles those limitations [here](https://aframe.io/docs/0.4.0/primitives/a-video.html).
