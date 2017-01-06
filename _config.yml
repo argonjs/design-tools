@@ -14,7 +14,7 @@ collections:
 # Setup
 title:               'argon.js documentation'
 tagline:             'Documentation'
-description:         'This site contains documentation for web developers using <a href="http://argonjs.io/design-aids" target="_blank">Design Aids</a> to add AR content to a web application.'
+description:         'This site contains documentation for web developers using <a href="http://argonjs.io/design-tools" target="_blank">Design Aids</a> to add AR content to a web application.'
 url:                 http://design-tools.argonjs.io
 baseurl:             '/design-tools'
 #baseurl:             'http://design-tools.argonjs.io'
