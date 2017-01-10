@@ -4,14 +4,22 @@
     <title>Geo</title>
     <script src="js/aframe.min.js"></script>
     <script src="js/argon.min.js"></script>
-    <script src="build.js"></script>
+    <script src="../build.js"></script>
     <script src="js/CSS3DArgonRenderer.js"></script>
     <script src="js/CSS3DArgonHUD.js"></script>
     <script src="js/aframe-look-at-component.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <div style="position:absolute;left:50px;top:50px;font-size:36px;"> This example is not yet available. </div>
-    
-  </body>
+  <ar-scene>
+      <a-assets>
+        <a-asset-item id="bust" src="model/Rock1.dae"></a-asset-item>	   
+      </a-assets>
+
+      <!-- put the bust in space -->
+        <a-entity scale="1 1 1">
+        <a-entity  position= " 1 1 -4" rotation="45 0 0" collada-model=#bust></a-entity> 
+       </a-entity>    
+    </ar-scene>  
+    </body>
 </html>
