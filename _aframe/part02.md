@@ -7,7 +7,7 @@ title: 'Lesson 2: Writing a simple Argon-aframe experience'
 
 Argon-aframe is built on top of the A-Frame framework and allows you to make use of much of the exisitng aframe code. We will not go through A-Frame itself. For an explanation of the aframe entities, please consult the [aframe documentation](https://aframe.io/docs/0.3.0/introduction/). Instead, we will start by showing you how easy it is to "wrap" Argon-aframe around A-Frame itself.  
 
-Here is the code for the Hello World example in A-Frame itself:
+Here is the code for the Hello World example in A-Frame itself: 
 
 {% highlight html %}
 <html>
