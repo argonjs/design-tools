@@ -11,7 +11,32 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <div style="position:absolute;left:50px;top:50px;font-size:36px;"> This example is not yet available. </div>
-    
+    <script>
+      AFRAME.registerComponent('cursor-listener', {
+        init: function () {
+          this.el.addEventListener('click', function (evt) {
+            console.log('I was clicked at: ', evt.detail.intersection.point);
+          });
+          this.el.addEventListener('mouseenter', function (evt) {
+            this.setAttribute('material', 'opacity', 0.5);
+          });
+          this.el.addEventListener('mouseleave', function (evt) {
+            this.setAttribute('material', 'opacity', 1.0);
+          });
+        }
+      });
+	</script>
+   <ar-scene>
+      <a-entity id="helloworld" position="0 0 -8">
+        <a-sphere position="0 1.25 -1" cursor-listener radius="1.25" color="#EF2D5E" ></a-sphere>
+      </a-entity>
+      <ar-camera>
+        <a-entity id="myCursor" cursor="fuse:true; fuse-timeout: 1000"
+                    position="0 0 -0.1"
+                    geometry="primitive:ring; radiusInner: 0.001; radiusOuter: 0.0015"
+                    material="color: #2E3A87; opacity:0.3;">          
+        </a-entity>
+      </ar-camera>
+    </ar-scene>
   </body>
 </html>
