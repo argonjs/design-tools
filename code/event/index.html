@@ -2,16 +2,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
   <head>
     <title>Geo</title>
-    <script src="js/aframe.min.js"></script>
-    <script src="js/argon.min.js"></script>
-    <script src="build.js"></script>
-    <script src="js/CSS3DArgonRenderer.js"></script>
-    <script src="js/CSS3DArgonHUD.js"></script>
-    <script src="js/aframe-look-at-component.js"></script>
+    <script src="../resources/js/aframe.min.js"></script>
+    <script src="../resources/js/argon.min.js"></script>
+    <script src="../build.js"></script>
+    <script src="../resources/js/CSS3DArgonRenderer.js"></script>
+    <script src="../resources/js/CSS3DArgonHUD.js"></script>
+    <script src="../resources/js/aframe-look-at-component.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <div style="position:absolute;left:50px;top:50px;font-size:36px;"> This example is not yet available. </div>
-    
+   <ar-scene>
+      <a-entity id="helloworld" position="0 0 -8">
+        <a-sphere id="mysphere" position="0 1.25 -1" radius="1.25" color="#EF2D5E" ></a-sphere>
+      </a-entity>
+      <ar-camera>
+        <a-entity id="myCursor" cursor="fuse:true; fuse-timeout: 1000"
+                    position="0 0 -0.1"
+                    geometry="primitive:ring; radiusInner: 0.001; radiusOuter: 0.0015"
+                    material="color: #2E3A87; opacity:0.3;">          
+        </a-entity>
+      </ar-camera>
+    </ar-scene>
+    <script>
+	var theSphere = document.querySelector("#mysphere"); 
+	theSphere.addEventListener("click",myReportingFunction); 
+	function myReportingFunction(){
+		console.log("sphere was clicked on"); 
+	}
+	</script>    
   </body>
 </html>
