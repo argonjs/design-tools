@@ -36,8 +36,8 @@ The JSON file contains two things, which you enter in the first two boxes on the
 In the second box, you should enter a list of domains and URL patterns specifying what URLs this license key and corresponding tracking database can be used from (the website shows you documentation on how to specify these patterns). The encrypted key used with the samples includes these patterns (among others):
 <pre>
 ?(*.)argonjs.io/**
-argon.gatech.edu/**
-ael.gatech.edu/**
+?(*.)argon.gatech.edu/**
+?(*.)ael.gatech.edu/**
 </pre>
 You will notice that if you try to run the code for this example from your own computer or any website aside from those, Vuforia it will not work.
 
