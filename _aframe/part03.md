@@ -26,6 +26,7 @@ First, here is the css that defines the class `boxface`. It can go in the `<head
     border: 0px;
     margin-bottom: 0px;
     padding: 0px 0px;
+    
 }
 {% endhighlight %}
  
