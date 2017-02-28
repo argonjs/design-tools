@@ -12,6 +12,7 @@ AR-Frame loads 3D models and materials by importing .OBJ, .MTL and Collada (.DAE
 The `obj-model` component loads a 3D model and material using a [Wavefront](https://en.wikipedia.org/wiki/Wavefront) (.OBJ) file and a .MTL file. We can load an .OBJ model by pointing to assets that specify the path to an .OBJ and .MTL file:
 
 {% highlight html %}
+<html>
 <ar-scene>
   <a-assets>
     <a-asset-item id="tree-obj" src="/path/to/tree.obj"></a-asset-item>
@@ -19,18 +20,21 @@ The `obj-model` component loads a 3D model and material using a [Wavefront](http
   </a-assets>
   <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
 </ar-scene>
+</html>
 {% endhighlight %}
 
 #Method 2
 The `collada-model` component loads a 3D model using a COLLADA (.DAE) file:
 
 {% highlight html %}
+<html>
 <ar-scene>
   <a-assets>
     <a-asset-item id="tree" src="/path/to/tree.dae"></a-asset-item>
   </a-assets>
   <a-entity collada-model="#tree"></a-entity>
 </ar-scene>
+</html>
 {% endhighlight %}
 
 We can also load assets of an OBJ or Collada model by specifying the path directly within url(). Note that this is less performant than going through the asset management system.
