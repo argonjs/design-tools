@@ -29,12 +29,12 @@ Once you have the equirectangular image as a .jpg or .png file, then you can cre
 </html>
 {% endhighlight %}
 
-You attach two components to the `<ar-scene>`:  `desiredreality` and `panorama`. Let's take the second component first. `panorama` has three attributes. The source is the image file (Centennial Olympic Park in Atlanta Georgia USA) The lla specified the geoposition where the panorama was taken (you can find this on Google Maps and elsehere). Right now the geoposition information (long and lat) is just stored, but it could be useful in an application later. The `initial` attribute indicates that this panorama is to be displayed in the background when the application starts up. Since it is the only panorama in this example, there is no other choice. However, you can declare multiple panoramas in this component and switch among them (see below). In that case the `initial` attribute becomes useful.
+You attach two components to the `<ar-scene>`:  `desiredreality` and `panorama`. Let's take the second component first. `panorama` has three attributes. The source is the image file (Centennial Olympic Park in Atlanta, Georgia, USA). The lla specifies the geoposition where the panorama was taken (you can find this on Google Maps and elsewhere). Right now, the geoposition information (long and lat) is just stored, but it could be useful in an application later. The `initial` attribute indicates that this panorama is to be displayed in the background when the application starts up. Since it is the only panorama in this example, there is no other choice. However, you can declare multiple panoramas in this component and switch among them (see below). In that case, the `initial` attribute becomes useful.
 
 
-## Putting a-frame objects in the panoramic reality  
+## Putting A-Frame objects in the panoramic reality  
 
-This example is empty so far: we  have the panoramic background, but nothing in the 3D space itself. But the panorama reality is just like the live video background. We can put any of the other aframe entities in the scene as well. For example, the geometric objects in our basic example:
+This example is empty so far: we  have the panoramic background, but nothing in the 3D space itself. But the panorama reality is just like the live video background. We can put any of the other A-Frame entities in the scene as well. For example, the geometric objects in our basic example:
 
 
 {% highlight html %}
@@ -64,7 +64,7 @@ Now the sphere, box, cylinder, and plane will all appear inside the space with t
 
 ## Switching among multiple panoramas  
 
-Here is a more complex example that features four different panoramas. The user switches between them by pressing a button at the buttom of the screen.
+Here is a more complex example that features four different panoramas. The user switches between them by pressing a button at the bottom of the screen.
 
 Here are the links to various scripts as usual:
 {% highlight html %}
@@ -92,7 +92,7 @@ The body begins with a menu and the `<ar-scene>` tag.
     </ar-scene>
 {% endhighlight %}    
 
-In the `<ar-scene>` tag above, the `desiredreality` component points again to the panorama reality file. But in this case there are four panorama components instead of one. The name extension (after the `__`) becomes the identifier for that panorama. (aqui is the Georgia Aquarium; cent is Centennial Olympic Park; high is the High Museum; pied is Piedmont Park – all in Atlanta, Georgia.)
+In the `<ar-scene>` tag above, the `desiredreality` component points again to the panorama reality file. In this case, however, there are four panorama components instead of one. The name extension (after the `__`) becomes the identifier for that panorama. (aqui is the Georgia Aquarium; cent is Centennial Olympic Park; high is the High Museum; pied is Piedmont Park – all in Atlanta, Georgia.)
 
 The following section of the code creates the menu that switches between the four panoramas and associates a click event handler with each of the four panoramas:
 
@@ -152,7 +152,7 @@ In the code above, note the `arScene.addEventListener`. You need to make sure th
 
 ## The Panorama Reality
 
-The Panorama Reality is one of three realities (backgrounds) that are currently available. The other two are the standard video reality (provided by the phone's camera) and the Google Streetview. This is a panorama provided by accessing Google Streetview for a particular location (long and lat).  
+The Panorama Reality is one of three realities (backgrounds) that are currently available. The other two are the standard video reality (provided by the phone's camera) and the Google Streetview, which is a panorama provided by accessing Google Streetview for a particular location (long and lat).  
 
 
 
