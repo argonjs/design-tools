@@ -47,6 +47,6 @@ A-Frame’s loader component is not perfect, and you may find it difficult to lo
 
 ##Additional resources:
 You can find and download models on the web to drop into our scenes:
-[Sketchup’s 3D Warehouse](https://3dwarehouse.sketchup.com/) - Repository of models.
-[Clara.io](https://3dwarehouse.sketchup.com/) - Repository of models.
-[Blender](https://www.blender.org/) - A free open-source 3D modeling program with plenty of existing learning resources to create models.
+* [Sketchup’s 3D Warehouse](https://3dwarehouse.sketchup.com/) - Repository of models.
+* [Clara.io](https://3dwarehouse.sketchup.com/) - Repository of models.
+* [Blender](https://www.blender.org/) - A free open-source 3D modeling program with plenty of existing learning resources to create models.
