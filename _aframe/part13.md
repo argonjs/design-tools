@@ -11,38 +11,28 @@ AR-Frame loads 3D models and materials by importing .OBJ, .MTL and Collada (.DAE
 #Method 1
 The `obj-model` component loads a 3D model and material using a [Wavefront](https://en.wikipedia.org/wiki/Wavefront) (.OBJ) file and a .MTL file. We can load an .OBJ model by pointing to assets that specify the path to an .OBJ and .MTL file:
 
-{% highlight html %}
-<html>
-<ar-scene>
+`<ar-scene>
   <a-assets>
     <a-asset-item id="tree-obj" src="/path/to/tree.obj"></a-asset-item>
     <a-asset-item id="tree-mtl" src="/path/to/tree.mtl"></a-asset-item>
   </a-assets>
   <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
-</ar-scene>
-</html>
-{% endhighlight %}
+</ar-scene>`
 
 #Method 2
 The `collada-model` component loads a 3D model using a COLLADA (.DAE) file:
 
-{% highlight html %}
-<html>
-<ar-scene>
+`<ar-scene>
   <a-assets>
     <a-asset-item id="tree" src="/path/to/tree.dae"></a-asset-item>
   </a-assets>
   <a-entity collada-model="#tree"></a-entity>
-</ar-scene>
-</html>
-{% endhighlight %}
+</ar-scene>`
 
 We can also load assets of an OBJ or Collada model by specifying the path directly within url(). Note that this is less performant than going through the asset management system.
 
-{% highlight html %}
-<a-entity obj-model="obj: url(/path/to/tree.obj); mtl: url(/path/to/tree.mtl)"></a-entity>
-<a-entity collada-model="url(/path/to/tree.dae)"></a-entity>
-{% endhighlight %}
+`<a-entity obj-model="obj: url(/path/to/tree.obj); mtl: url(/path/to/tree.mtl)"></a-entity>
+<a-entity collada-model="url(/path/to/tree.dae)"></a-entity>`
 
 ##Troubleshooting:
 If you don’t see your model, try scaling it down. OBJ model vertices commonly have large unit scales in comparison to A-Frame, which uses a unit scale of meters.
