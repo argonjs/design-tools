@@ -8,7 +8,7 @@ title: 'Lesson 13: Loading 3D models'
 
 AR-Frame loads 3D models and materials by importing .OBJ, .MTL and Collada (.DAE) files.
 
-##Method 1: Wavefront OBJ Model
+## Method 1: Wavefront OBJ Model
 The `obj-model` component loads a 3D model and material using a [Wavefront](https://en.wikipedia.org/wiki/Wavefront) (.OBJ) file and a .MTL file. We can load an .OBJ model by pointing to assets that specify the path to an .OBJ and .MTL file:
 
 ```
@@ -21,7 +21,7 @@ The `obj-model` component loads a 3D model and material using a [Wavefront](http
 </ar-scene>
 ```
 
-##Method 2 COLLADA Model
+## Method 2 COLLADA Model
 The `collada-model` component loads a 3D model using a COLLADA (.DAE) file:
 
 ```
@@ -33,7 +33,7 @@ The `collada-model` component loads a 3D model using a COLLADA (.DAE) file:
 </ar-scene>
 ```
 
-##Loading Inline
+## Loading Inline
 We can also load assets of an OBJ or Collada model by specifying the path directly within url(). Note that this is less performant than going through the asset management system.
 
 ```
@@ -41,12 +41,12 @@ We can also load assets of an OBJ or Collada model by specifying the path direct
 <a-entity collada-model="url(/path/to/tree.dae)"></a-entity>
 ```
 
-###Troubleshooting:
+### Troubleshooting:
 * If you don’t see your model, try scaling it down. OBJ model vertices commonly have large unit scales in comparison to A-Frame, which uses a unit scale of meters.
 * If you don’t see textures on your model, try placing all .jpg images in the same directory. When an OBJ model uses multiple materials (.jpg images), make sure it defines object groups for the sub-objects that use each of those materials, so that Three.js' OBJLoader can associate the materials correctly. It is tricky to work with model that has multiple layers of texture, or iridescent effect.
 * A-Frame’s loader component is not perfect, and you may find it difficult to load Collada files; OBJ files are often easier to work with.
 
-###Additional resources:
+### Additional resources:
 You can find and download models on the web to drop into our scenes:
 * [Sketchup’s 3D Warehouse](https://3dwarehouse.sketchup.com/) - Repository of models.
 * [Clara.io](https://3dwarehouse.sketchup.com/) - Repository of models.
