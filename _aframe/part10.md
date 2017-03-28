@@ -6,11 +6,11 @@ title: 'Lesson 10: Image-tracking'
 
 
 
-Geolocation using GPS and other positioning information is one way to locate objects in the world (see Lessons 6 and 7). But geolocaiton is inaccurate and therefore useful only for the large-scale placement of digital objects and information. That is, if you want the user to see a 3D model of a building located on the site where it is going to be constructed, then geolocaiton will work fairly well. If the user is standing some distance from the site, it doesn't matter much whether the model is misplaced every by 10 or more meters. However, if you want to create a table-top AR game where virtual zombies run across the player's desk, then GPS is far too inaccurate. When you want precise registration, you need to use image-tracking. For such purposes, Argon uses the [Vuforia](http://www.vuforia.com) image-tracking system. 
+Geolocation using GPS and other positioning information is one way to locate objects in the world (see Lessons 6 and 7). But geolocation is inaccurate and therefore useful only for the large-scale placement of digital objects and information. That is, if you want the user to see a 3D model of a building located on the site where it is going to be constructed, then geolocation will work fairly well. If the user is standing some distance from the site, it doesn't matter much whether the model is misplaced every by 10 or more meters. However, if you want to create a table-top AR game where virtual zombies run across the player's desk, then GPS is far too inaccurate. When you want precise registration, you need to use image-tracking. For such purposes, Argon uses the [Vuforia](http://www.vuforia.com) image-tracking system. 
 
-Vuforia keeps a database of images for your application. When the phone videocamera shows one of the images, Vuforia recognizes it and computes the position and orientation of the phone relative to the image. This allows Argon to position 3D objects with precision (usually in the space above or in front of the image). You can see how this works by running this example. First you need to print out this generic image of [stones](https://developer.vuforia.com/sites/default/files/sample-apps/targets/stones.pdf) (You can also bring up the stones image on a desktop computer screen without printing it out). Then load this application into Argon. Now when you point the phone's camera at the stones image, you will see a bronze head appear right above the image. 
+Vuforia keeps a database of images for your application. When the phone camera shows one of the images, Vuforia recognizes it and computes the position and orientation of the phone relative to the image. This allows Argon to position 3D objects with precision (usually in the space above or in front of the image). You can see how this works by running this example. First, you need to print out this generic image of [stones](https://developer.vuforia.com/sites/default/files/sample-apps/targets/stones.pdf). (You can also bring up the stones image on a desktop computer screen without printing it out.) Then, load this application into Argon. Now when you point the phone's camera at the stones image, you will see a bronze head appear right above the image. 
 
-Here is the code to make this happen. Start with the usual scripts in the header. (Note that we have also got splash.css and app.css files file to create an animated splash screen.)
+Here is the code to make this happen. Start with the usual scripts in the header. (Note that we also have splash.css and app.css files to create an animated splash screen.)
 
 {% highlight html %}
 
@@ -29,7 +29,7 @@ Here is the code to make this happen. Start with the usual scripts in the header
   </head>
   {% endhighlight %}
   
-  Then in the body of the page  we create some divs. The first set instructs the user to point the phone at the stones target. This will appear at the bottom of the screen. The other divs for creating an animated splash screen while the image database is being initialized. 
+Then in the body of the page, we create some divs. The first set instructs the user to point the phone at the stones target. This will appear at the bottom of the screen. The other divs are for creating an animated splash screen while the image database is being initialized. 
   
   {% highlight html %}
 
@@ -49,7 +49,7 @@ Here is the code to make this happen. Start with the usual scripts in the header
     </div>
 {% endhighlight %}
 
-  Here are the most important lines.  The `<ar-scene>` tag here has two components: one give the vuforia key; the other tells the system what image data set is being used. 
+  Here are the most important lines. The `<ar-scene>` tag here has two components: one gives the vuforia key; the other tells the system what image data set is being used. 
   
   {% highlight html %}
     <ar-scene vuforiakey="#vuforiakey"
