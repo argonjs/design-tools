@@ -4,7 +4,7 @@ title: 'Lesson 10: Image-tracking'
 ---
 > Download [Argon4](http://argonjs.io/argon-app) and the [Tutorial Source Code](https://github.com/argonjs/design-aids/tree/gh-pages/code). <br> This tutorial uses the *vuforia* and *resources* directories.<br> **[Demo in Argon4](https://github.com/argonjs/design-aids/tree/gh-pages/code/vuforia/)**
 
-
+{% include lesson10vid.html %}
 
 Geolocation using GPS and other positioning information is one way to locate objects in the world (see Lessons 6 and 7). But geolocation is inaccurate and therefore useful only for the large-scale placement of digital objects and information. That is, if you want the user to see a 3D model of a building located on the site where it is going to be constructed, then geolocation will work fairly well. If the user is standing some distance from the site, it doesn't matter much whether the model is misplaced every by 10 or more meters. However, if you want to create a table-top AR game where virtual zombies run across the player's desk, then GPS is far too inaccurate. When you want precise registration, you need to use image-tracking. For such purposes, Argon uses the [Vuforia](http://www.vuforia.com) image-tracking system. 
 
