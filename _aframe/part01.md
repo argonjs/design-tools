@@ -23,7 +23,7 @@ An Argon-aframe application consists of an html file and auxiliary files. The ht
 
 Argon-aframe works like any web application. You place your html and other resource files on your server and serve them to your users through the http protocol: 
 
-Diagram
+![Lesson 1_picture1](http://argonjs.io/design-tools/_includes/Lesson 1_picture1.png){:class="img-responsive"}
 
 We assume that you understand how to store html files on a server and serve them. If this is not the case, you can contact a web developer/programmer to proceed.
 
