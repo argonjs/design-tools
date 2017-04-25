@@ -26,7 +26,7 @@ The virtual camera is an entity too. So in aframe you can the position component
 
 Note that in Argon aframe the situation with the camera is more complicated. There is a special entity called `<ar-camera>`, and it contains the aframe camera along with a special frame of reference `ar-user`. This is position of the user, that is the phone the user is holding. The `ar-camera` always stays with the user because its perspective must be the same as the phone's actual videocamera. Otherwise the 3D objects drawn in the scene would not be in their proper positions when the user looks at them through the phone's video screen.
 
-[diagram illustrating this]  
+{% include camera_moving.html %}
 
 Long-lat as a frame of reference 
 So far we have been talking about the frame of reference within the virtual graphic space of AR. For geopositioning to work, we need a frame of reference that relates to the earth itself. 
