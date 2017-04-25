@@ -4,6 +4,7 @@ title: 'Lesson 7: Geolocation'
 ---
 > Download [Argon4](http://argonjs.io/argon-app) and the [Tutorial Source Code](https://github.com/argonjs/design-aids/tree/gh-pages/code). <br> This tutorial uses the *geolocation* and *resources* directories.<br> **[Demo in Argon4](https://github.com/argonjs/design-aids/tree/gh-pages/code/geolocation/)**
 
+{% include lesson7vid.html %}
 
 Key features of augmented reality include 1. the ability of associating data objects with places in the world and 2. displaying those objects at those places. 
 
