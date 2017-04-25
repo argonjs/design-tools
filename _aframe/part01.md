@@ -5,7 +5,6 @@ title: 'Lesson 1: Getting Started with Argon-Aframe'
 
 An Argon-aframe application consists of an html file and auxiliary files. The html file contains the tags that display the objects and the media, as we will describe in the following lessons. In addition to the tags in the `<body>` of your html file, you also need to insert script tags in the `<head>`. These script tags will refer to resources that the application needs, such as the aframe.js and argon.js code and other javascript files. In the examples, we use a folder called resources to store these code files (in a subfolder called js). There are other assets you may need for your application, such as style sheets and various media assets - jpg images, audio and video files - depending on the purpose of your application. You can organize these in folders as you prefer. Here is the bare minimum structure of your html file:
 
- {% include tutorial1Video.html %}
 
 {% highlight html %}
 <html>
@@ -24,7 +23,7 @@ An Argon-aframe application consists of an html file and auxiliary files. The ht
 
 Argon-aframe works like any web application. You place your html and other resource files on your server and serve them to your users through the http protocol: 
 
-[Diagram]
+{% include moving_camera.html %}
 
 We assume that you understand how to store html files on a server and serve them. If this is not the case, you can contact a web developer/programmer to proceed.
 
