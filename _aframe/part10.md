@@ -4,12 +4,19 @@ title: 'Lesson 10: Image-tracking'
 ---
 > Download [Argon4](http://argonjs.io/argon-app) and the [Tutorial Source Code](https://github.com/argonjs/design-aids/tree/gh-pages/code). <br> This tutorial uses the *vuforia* and *resources* directories.<br> **[Demo in Argon4](https://github.com/argonjs/design-aids/tree/gh-pages/code/vuforia/)**
 
+{% include lesson10vid.html %}
 
+Geolocation using GPS and other positioning information is one way to locate objects in the world (see Lessons 6 and 7). But geolocation is inaccurate and therefore useful only for the large-scale placement of digital objects and information. That is, if you want the user to see a 3D model of a building located on the site where it is going to be constructed, then geolocation will work fairly well. If the user is standing some distance from the site, it doesn't matter much whether the model is misplaced every by 10 or more meters. However, if you want to create a table-top AR game where virtual zombies run across the player's desk, then GPS is far too inaccurate. When you want precise registration, you need to use image-tracking. For such purposes, Argon uses the [Vuforia](http://www.vuforia.com) image-tracking system. 
 
+<<<<<<< HEAD
 Geolocation using GPS and other positioning information is one way to locate objects in the world (see Lessons 6 and 7). But geolocation is inaccurate and therefore useful only for the large-scale placement of digital objects and information. That is, if you want the user to see a 3D model of a building located on the site where it is going to be constructed, then geolocation will work fairly well. If the user is standing some distance from the site, it doesn't matter much whether the model is misplaced every by 10 or more meters. However, if you want to create a table-top AR game where virtual zombies run across the player's desk, then GPS is far too inaccurate. When you want precise registration, you need to use image-tracking. For such purposes, Argon uses the [Vuforia](http://www.vuforia.com) image-tracking system. 
 
 Vuforia keeps a database of images for your application. When the phone camera shows one of the images, Vuforia recognizes it and computes the position and orientation of the phone relative to the image. This allows Argon to position 3D objects with precision (usually in the space above or in front of the image). You can see how this works by running this example. First, you need to print out this generic image of [stones](https://developer.vuforia.com/sites/default/files/sample-apps/targets/stones.pdf). (You can also bring up the stones image on a desktop computer screen without printing it out.) Then, load this application into Argon. Now when you point the phone's camera at the stones image, you will see a bronze head appear right above the image. 
 
+=======
+Vuforia keeps a database of images for your application. When the phone camera shows one of the images, Vuforia recognizes it and computes the position and orientation of the phone relative to the image. This allows Argon to position 3D objects with precision (usually in the space above or in front of the image). You can see how this works by running this example. First, you need to print out this generic image of [stones](https://developer.vuforia.com/sites/default/files/sample-apps/targets/stones.pdf). (You can also bring up the stones image on a desktop computer screen without printing it out.) Then, load this application into Argon. Now when you point the phone's camera at the stones image, you will see a bronze head appear right above the image. 
+
+>>>>>>> pr/2
 Here is the code to make this happen. Start with the usual scripts in the header. (Note that we also have splash.css and app.css files to create an animated splash screen.)
 
 {% highlight html %}

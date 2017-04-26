@@ -8,6 +8,11 @@ title: 'Lesson 13: Loading 3D models'
 
 AR-Frame loads 3D models and materials by importing .OBJ, .MTL and Collada (.DAE) files.
 
+<<<<<<< HEAD
+=======
+{% include lesson13vid.html %}
+
+>>>>>>> pr/2
 ## Method 1: Wavefront OBJ Model
 The `obj-model` component loads a 3D model and material using a [Wavefront](https://en.wikipedia.org/wiki/Wavefront) (.OBJ) file and a .MTL file. We can load an .OBJ model by pointing to assets that specify the path to an .OBJ and .MTL file:
 
