@@ -1,17 +1,23 @@
 ---
 layout: page
-title: 'Part 2: Run an example'
+title: 'Part 2: Running an example AR experience'
 ---
-To get better understanding of Argon for Twine, let’s try an example.
 
-First step is to download story images to show 3D models from [here](https://github.com/argonjs/understanding-argon-twine/blob/master/storybook.pdf).
-You can print out the story images or simply have it open on the computer screen.
+## Running the Understanding-AR example
+To get an idea of the power of Twine for creating AR experiences, let’s try running an example called "Understanding-AR", an experience dedicated to the history of augmented reality. Keep in mind that this lesson is optional.
 
-Now, follow the steps below:
-1) Open the Argon4 application on your phone.
-2) Navigate to http://philkt.me/understanding-ar-twine/ on the application.
-3) With the website open, hold the phone over a story image.
-4) 3D model associated with the story image will automatically appear with text descriptions.
+To run the example, follow the steps below:
+1. Download and print the story images from [here](https://github.com/argonjs/understanding-argon-twine/blob/master/storybook.pdf). These are tracking images that Argon uses as locational frames of reference.
+2. Place these images face up on a flat surface.
+3. Open the Argon4 application on your phone.
+4. Navigate to [this website](http://philkt.me/understanding-ar-twine/) through the Argon4 search engine.
+5. With the page open, point the phone at the story image.
 
-Source code is found in this [GitHub directory](https://github.com/argonjs/understanding-argon-twine).
-In the next part, we will show you the underlying principles behind this example and how to create your own.
+At this point, the 3D models and text associated with the story image should appear on your phone.
+
+**NOTE:**
+Alternatively, instead of printing the story images for step 1, you can simply point your phone at the images on your computer screen. However, the 3D models may be rotated in an unpredictable way, so it is recommended you print the images.
+
+The source code for this example can be found in this [GitHub directory](https://github.com/argonjs/understanding-argon-twine).
+
+Next, we will show you how to create basic AR experiences using Twine.
