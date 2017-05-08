@@ -3,13 +3,13 @@ layout: page
 title: 'Part 5: Panoramas'
 ---
 
-> This lesson uses the second [example](https://github.com/blairmacintyre/oldfashioned/tree/master/examples/) from github. <br> Import the text file into Twine to open the project.
+> This lesson uses the second [example](https://GitHub.com/blairmacintyre/oldfashioned/tree/master/examples/) from github. <br> Import the text file into Twine to open the project.
 
 
 ## Argon Panoramas
 The default background for Argon is the view offered by the live video camera on the phone or tablet. Instead of the video, you can substitute a 360-degree panoramic image as the background. Panoramas offer a number of compelling design options. If the user cannot get to a specific location, such as a museum or historic site, the panorama can convey what the site looks like. The AR experience can play over the panorama.
 
-To display a panoramic backgroud, Argon needs an image in a special format called an ‘equirectangular projection.” You can make such a photo yourself using a relatively inexpensive panoramic camera such as the [Ricoh Theta S](https://theta360.com/en/about/theta/s.html). You can also take multiple images with a DLSR camera and stitch them into an equirectangular projection using a stitcher program such as [PTGui](https://www.ptgui.com). The resulting image should have an aspect ratio (width to height) of 2-1. 5000x2500 pixels is a good size. If the image is too large, it may fail to load. Once you have the equirectangular image as a .jpg or .png file, then you can create the panorama in Argon.
+To display a panoramic background, Argon needs an image in a special format called an ‘equirectangular projection.” You can make such a photo yourself using a relatively inexpensive panoramic camera such as the [Ricoh Theta S](https://theta360.com/en/about/theta/s.html). You can also take multiple images with a DLSR camera and stitch them into an equirectangular projection using a "stitcher" program such as [PTGui](https://www.ptgui.com). The resulting image should have an aspect ratio (width to height) of 2-1. 5000x2500 pixels is a good size. If the image is too large, it may fail to load. Once you have the equirectangular image as a .jpg or .png file, then you can create the panorama in Argon.
 
 ## Adding the Panorama Macros
 Let's begin by creating a new Twine story and entering the JavaScript editor. Remember that the first code you must add to any AR Twine experience is the "passage-cleanup". For this experience, the same code as the previous example will suffice.
@@ -20,7 +20,7 @@ The first macro we must define is `createPanorama`.
 This macro will be called in the `StoryInit` passage and be used to initialize panoramas that we may later use in our Twine passages.
 It takes in three arguments, a name, a dataset url, and a string containing the latitude, longitude, and altitude, of the location of the panorama.
 
-We will also be creating a short helper function for our createPanorama macro. Add the code below.
+We will also be creating a short helper function for our `createPanorama` macro. Add the code below.
 
 ```javascript
 
@@ -121,9 +121,9 @@ Click [[next|second]] to see how 3D objects look when placed on a panorama.
 Note that `aquarium` should be replaced with the name corresponding to the panorama image you wish to show in the scene.
 
 ## Overlaying 3D Objects onto Panoramas
-With our next passage, let's try to overlay our panorama with some 3D objects. Think back to tutorial 3. How did we add 3D objects to a scene?
+With our next passage, let's try to overlay our panorama with some 3D objects. Think back to [part 3]({{ site.baseurl }}/_twinet/part3). How did we add 3D objects to a scene?
 
-Remember, we first have to add the append3d (and optionally the replace3d) macro into the JavaScript component before we can begin placing 3D objects into our scene. Go ahead and add those in. After that's done, we can start adding 3D objects, and your second passage can look something like this:
+Remember, we have to first add the append3d (and optionally the replace3d) macro into the JavaScript component before we can begin placing 3D objects into our scene. Go ahead and add those in. After that's done, we can start adding 3D objects, and your second passage can look something like this:
 
 ```html
 Here is our second panorama, and as you can see (you might have to look around), we have added some 3D objects to it! Click [[here|Start]] to go back to the 'Start' scene.

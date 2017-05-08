@@ -3,13 +3,13 @@ layout: page
 title: 'Part 4: CSS Styling in Twine'
 ---
 
-> This lesson uses the first [example](https://github.com/blairmacintyre/oldfashioned/tree/master/examples/) from github. <br> Import the text file into Twine to open the project.
+> This lesson uses the first [example](https://github.com/blairmacintyre/oldfashioned/tree/master/examples/) from GitHub. <br> Import the text file into Twine to open the project.
 
 
 ## Utilizing CSS Styling
-You can utilize CSS for styling an Argon experience's layout, font, and presentation. We will be adding some CSS styling to the Twine expererience we created in the last lesson.
+You can utilize CSS for styling an Argon experience's layout, font, and presentation. We will be adding some CSS styling to the Twine experience we created in the last lesson.
 
-To create storywide styling, you must reference the story's id: `story`. We can style our story in a multitude of different ways. For example, we can specify "pointer events", which allow you to control when a graphic element becomes the target of mouse elements. "Auto" applies to all events. Other possible styling we can do includes choosing our font families, specifying background color, positioning our CSS elements, etc..
+To create storywide styling, you must reference the story's id: `story`. We can style our story in a multitude of different ways. For example, we can specify "pointer events", which allow you to control when a graphic element becomes the target of mouse elements. "Auto" applies to all events. Other possible styling we can do includes choosing our font families, specifying background color, positioning our CSS elements, etc.
 
 ```css
 
@@ -25,7 +25,7 @@ To create storywide styling, you must reference the story's id: `story`. We can 
 
 ```
 
-Using CSS styling, we can also influence how Argon treats obejcts that are in focus and those that are out of focus. To style elements that are in focus, simply style the `argon-focus` class, and for those that are out of focus, use the `argon-no-focus` class.
+Using CSS styling, we can also influence how Argon treats objects that are in focus and those that are out of focus. To style elements that are in focus, simply style the `argon-focus` class, and for those that are out of focus, use the `argon-no-focus` class.
 
 Add the code below and notice how in this example we make objects that are not focused notably more transparent.
 
