@@ -12,6 +12,7 @@ collections:
     output: true
 
 # Setup
+#source: code
 title:               'argon.js documentation'
 tagline:             'Documentation'
 description:         'This site contains documentation for web developers using <a href="http://argonjs.io/design-tools" target="_blank">Design Tools</a> to add AR content to a web application.'
@@ -26,6 +27,7 @@ samples: "https://samples-develop.argonjs.io"
 argonaframejs: "../build.js"
 
 exclude: ['Rakefile', 'LICENSE.txt', 'CLA.md', 'CONTRIBUTING.md', 'README.md', "node_modules", "package.json"]
+include: [code]
 
 # About/contact
 author:
