@@ -2,7 +2,7 @@
 layout: page
 title: 'Lesson 7: Geolocation'
 ---
-> Download [Argon4](http://argonjs.io/argon-app) and the [Tutorial Source Code](https://github.com/argonjs/design-aids/tree/gh-pages/code). <br> This tutorial uses the *geolocation* and *resources* directories.<br> **[Demo in Argon4](https://github.com/argonjs/design-aids/tree/gh-pages/code/geoposition/)**
+> Download [Argon4](http://argonjs.io/argon-app) and the [Tutorial Source Code](https://github.com/argonjs/design-aids/tree/gh-pages/code). <br> This tutorial uses the *geolocation* and *resources* directories.<br> **[Demo in Argon4](https://rawgit.com/argonjs/design-tools/gh-pages/code/geoposition/index.html)**
 
 {% include lesson7vid.html %}
 

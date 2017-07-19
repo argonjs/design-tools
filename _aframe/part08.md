@@ -2,7 +2,7 @@
 layout: page
 title: 'Lesson 8: Triggers'
 ---
-> Download [Argon4](http://argonjs.io/argon-app) and the [Tutorial Source Code](https://github.com/argonjs/design-aids/tree/gh-pages/code). <br> This tutorial uses the *trigger* and *resources* directories.<br> **[Demo in Argon4](https://github.com/argonjs/design-aids/tree/gh-pages/code/trigger/)**
+> Download [Argon4](http://argonjs.io/argon-app) and the [Tutorial Source Code](https://github.com/argonjs/design-aids/tree/gh-pages/code). <br> This tutorial uses the *trigger* and *resources* directories.<br> **[Demo in Argon4](https://rawgit.com/argonjs/design-tools/gh-pages/code/trigger/index.html)**
 
 A common need in AR and VR is to know when the viewer is within a certain distance of some location in the world. The `trigger` component can be attached to an entity, and when the camera is within a certain distance (specified by the `radius` attribute), the component will emit an event (specified by the `event` attribute).
 

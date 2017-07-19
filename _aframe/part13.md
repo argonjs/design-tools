@@ -3,16 +3,14 @@ layout: page
 title: 'Lesson 13: Loading 3D models'
 ---
 > Download [Argon4](http://argonjs.io/argon-app) and the [Tutorial Source Code](https://github.com/argonjs/design-aids/tree/gh-pages/code).
-<br> This tutorial uses the *ferrari* and *resources* directories.<br> **[Demo in Argon4](https://github.com/argonjs/design-aids/tree/gh-pages/code/ferrari/)**
+<br> This tutorial uses the *ferrari* and *resources* directories.<br> **[Demo in Argon4](https://rawgit.com/argonjs/design-tools/gh-pages/code/ferrari/index.html)**
 
 
 AR-Frame loads 3D models and materials by importing .OBJ, .MTL and Collada (.DAE) files.
 
-<<<<<<< HEAD
 =======
 {% include lesson13vid.html %}
 
->>>>>>> pr/2
 ## Method 1: Wavefront OBJ Model
 The `obj-model` component loads a 3D model and material using a [Wavefront](https://en.wikipedia.org/wiki/Wavefront) (.OBJ) file and a .MTL file. We can load an .OBJ model by pointing to assets that specify the path to an .OBJ and .MTL file:
 

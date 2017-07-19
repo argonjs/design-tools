@@ -2,7 +2,7 @@
 layout: page
 title: 'Lesson 4: Creating a cursor'
 ---
-> Download [Argon4](http://argonjs.io/argon-app) and the [Tutorial Source Code](https://github.com/argonjs/design-aids/tree/gh-pages/code). <br> This tutorial uses the *cursor* and *resources* directories.<br> **[Demo in Argon4](https://github.com/argonjs/design-aids/tree/gh-pages/code/cursor/)**
+> Download [Argon4](http://argonjs.io/argon-app) and the [Tutorial Source Code](https://github.com/argonjs/design-aids/tree/gh-pages/code). <br> This tutorial uses the *cursor* and *resources* directories.<br> **[Demo in Argon4](https://rawgit.com/argonjs/design-tools/gh-pages/code/component/index.html)**
 
 
 In an HTML page, the user typically selects an item by clicking on it with the cursor. You can also add a cursor to the 3D world of Argon-aframe. When you add the cursor to the camera entity, it will appear at a place you specify relative to the center of the screen. This cursor shape will move as the user moves the phone. (If the user is using a Google cardboard or similar device, then turning her head will move the cursor.) The cursor can be activated by a click by the user or simply by keeping it steady over an object for a length of time (the fuse time). Look at the example below:
