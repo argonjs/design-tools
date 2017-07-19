@@ -3,7 +3,7 @@ layout: page
 title: 'Lesson 2: Writing a simple Argon-aframe experience'
 ---
 
-> Download [Argon4](http://argonjs.io/argon-app) and the [Tutorial Source Code](https://github.com/argonjs/design-tools/tree/gh-pages/code). <br> This tutorial uses the *basic* and *resources* directories.<br> **[Demo in Argon4](https://github.com/argonjs/design-aids/tree/gh-pages/code/basic/)**
+> Download [Argon4](http://argonjs.io/argon-app) and the [Tutorial Source Code](https://github.com/argonjs/design-tools/tree/gh-pages/code). <br> This tutorial uses the *basic* and *resources* directories.<br> **[Demo in Argon4](https://rawgit.com/argonjs/design-tools/gh-pages/code/basic/index.html)**
 
 Argon-aframe is built on top of the A-Frame framework and allows you to make use of much of the existing A-Frame code. We will not go through A-Frame itself. For an explanation of the A-Frame entities, please consult the [A-Frame documentation](https://aframe.io/docs/0.3.0/introduction/). Instead, we will start by showing you how easy it is to "wrap" Argon-aframe around A-Frame itself.  
 
