@@ -17,9 +17,9 @@ Once you have the equirectangular image as a .jpg or .png file, then you can cre
   <head>
     <title>Hello, World! Argon + A-Frame</title>
     <meta name="description" content="Panorama Argon + A-Frame">
-    <script src="../resources/js/aframe.js"></script>
-    <script src="../resources/js/argon.min.js"></script>
-    <script src="../build.js"></script>
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/argonjs/argon/develop/dist/argon.js"></script>
+    <script src="https://rawgit.com/argonjs/argon-aframe/master/dist/argon-aframe.js"></script>
   </head>
   <body>
     <ar-scene desiredreality="src:url(../resources/reality/panorama/index.html);" panorama="src:url(panoramas/cent.jpg);lla:'-84.3931 33.7608 309';initial:true;">

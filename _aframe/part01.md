@@ -10,9 +10,9 @@ An Argon-aframe application consists of an html file and auxiliary files. The ht
   <head>
     <title>Hello, World! Argon + A-Frame</title>
     <meta name="description" content="Hello, World! Argon + A-Frame">
-    <script src="../resources/js/aframe.js"></script>
-    <script src="../resources/js/argon.min.js"></script>
-    <script src="../build.js"></script>
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/argonjs/argon/develop/dist/argon.js"></script>
+    <script src="https://rawgit.com/argonjs/argon-aframe/master/dist/argon-aframe.js"></script>
   </head>
   <body>
 	ARGON AFRAME TAGS GO HERE 

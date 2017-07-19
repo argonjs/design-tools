@@ -16,7 +16,6 @@ Vuforia keeps a database of images for your application. When the phone camera s
 =======
 Vuforia keeps a database of images for your application. When the phone camera shows one of the images, Vuforia recognizes it and computes the position and orientation of the phone relative to the image. This allows Argon to position 3D objects with precision (usually in the space above or in front of the image). You can see how this works by running this example. First, you need to print out this generic image of [stones](https://developer.vuforia.com/sites/default/files/sample-apps/targets/stones.pdf). (You can also bring up the stones image on a desktop computer screen without printing it out.) Then, load this application into Argon. Now when you point the phone's camera at the stones image, you will see a bronze head appear right above the image. 
 
->>>>>>> pr/2
 Here is the code to make this happen. Start with the usual scripts in the header. (Note that we also have splash.css and app.css files to create an animated splash screen.)
 
 {% highlight html %}
@@ -27,11 +26,11 @@ Here is the code to make this happen. Start with the usual scripts in the header
     <meta name="description" content="Vuforia, with Argon + A-Frame">
     <link rel="stylesheet" type="text/css" href="../resources/splash.css">
     <link rel="stylesheet" type="text/css" href="app.css">
-    <script src="../resources/js/aframe.min.js"></script>
-    <script src="../resources/js/argon.min.js"></script>
-    <script src="../build.js"></script>
-    <script src="../resources/js/CSS3DArgonRenderer.js"></script>
-    <script src="../resources/js/CSS3DArgonHUD.js"></script>
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/argonjs/argon/develop/dist/argon.js"></script>
+    <script src="https://rawgit.com/argonjs/argon-aframe/master/dist/argon-aframe.js"></script>
+    <script src="https://samples-develop.argonjs.io/resources/lib/CSS3DArgonRenderer.js"></script>
+    <script src="https://samples-develop.argonjs.io/resources/lib/CSS3DArgonHUD.js"></script>
     <script src="../resources/js/aframe-look-at-component.js"></script>
   </head>
   {% endhighlight %}
