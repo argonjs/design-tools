@@ -2,7 +2,11 @@
 layout: page
 title: 'Lesson 9: Panoramas'
 ---
-> Download [Argon4](http://argonjs.io/argon-app) and the [Tutorial Source Code](https://github.com/argonjs/design-aids/tree/gh-pages/code). <br> This tutorial uses the *panorama* and *resources* directories.<br> **[Demo in Argon4: Simple panorama:](https://rawgit.com/argonjs/design-tools/gh-pages/code/panorama/simple.html)****[Panorama with 3D objects](https://rawgit.com/argonjs/design-tools/gh-pages/code/panorama/simple-objects.html)****[Demo in Argon4: Multiple panoramas](https://rawgit.com/argonjs/design-tools/gh-pages/code/panorama/multiple.html)**
+> Download [Argon4](http://argonjs.io/argon-app) and the [Tutorial Source Code](https://github.com/argonjs/design-aids/tree/gh-pages/code). <br> This tutorial uses the *panorama* and *resources* directories.<br> **[Demo in Argon4: Simple panorama:](https://rawgit.com/argonjs/design-tools/gh-pages/code/panorama/simple.html)**
+
+**[Panorama with 3D objects](https://rawgit.com/argonjs/design-tools/gh-pages/code/panorama/simple-objects.html)**
+
+**[Multiple panoramas](https://rawgit.com/argonjs/design-tools/gh-pages/code/panorama/multiple.html)**
 
 {% include lesson9vid.html %}
 
