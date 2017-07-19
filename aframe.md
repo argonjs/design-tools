@@ -18,4 +18,7 @@ To learn how to create such applications, take the lessons below:
 {% for part in parts %} * [{{ part.title }}]({{ site.baseurl }}{{ part.url }}) 
 {% endfor %} 
 
-You can run the examples referred in the tutorials (on an iOS or Android device equipeed with the Argon browser) from [this page](https://rawgit.com/argonjs/design-tools/gh-pages/code/index.html).
+You can run the examples referred in the tutorials (on an iOS or Android device equipeed with the Argon browser) from [here]({{ site.baseurl }}/code/index.html)
+
+
+Also here [this page](https://rawgit.com/argonjs/design-tools/gh-pages/code/index.html).
