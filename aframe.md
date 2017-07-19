@@ -22,3 +22,5 @@ You can run the examples referred in the tutorials (on an iOS or Android device 
 
   
 Also here [this page](https://rawgit.com/argonjs/design-tools/gh-pages/code/index.html).
+
+Both work.
