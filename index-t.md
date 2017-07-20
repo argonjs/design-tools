@@ -7,4 +7,4 @@ layout: page
 
 If you visit the website, you will see that Twine is an established platform with examples, documentation, community blogs, etc. 
 
-You can use these resources to understand Twine. Here we describe Argon for Twine, assuming that you already know the basics of Twine itself. 
+You can use these resources to understand Twine. Here we describe Argon for Twine, assuming that you already know the basics of Twine itself. Here is the [start page for the tutorials.]({{ site.baseurl }}/twine/index.html). You can also also the tutorials from the sidebar you see on the left.
