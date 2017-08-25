@@ -4,7 +4,7 @@ title: Overview
 permalink: /concepts/overview/
 ---
 
-This page should also describe the situation with various browsers and Argon. 
+This page should describe the situation with various browsers and Argon. 
 
 On this page, we provide a brief overview of the design of *argon.js*, introducing some of the terminology and concepts used by the framework. A more detailed overview can be found in the documentation for [argonjs itself]()
 
