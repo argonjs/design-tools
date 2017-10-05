@@ -37,19 +37,19 @@
                  material="color: #FFF; shader: flat"
                  light="color: #DDDDFF; distance: 120; intensity: 2; type: point">
         </a-mixin>
-	    <a-asset-item id="bust-obj" src="model/Head_Decimated.obj"></a-asset-item>
-	    <a-asset-item id="bust-mtl" src="model/Head_Decimated.mtl"></a-asset-item> 
+	    <!--<a-asset-item id="bust-obj" src="model/Head_Decimated.obj"></a-asset-item>
+	    <a-asset-item id="bust-mtl" src="model/Head_Decimated.mtl"></a-asset-item> --> 
 	  </a-assets>
 	  
 
       <!-- attach to stones target. x/y in the plane, z up -->
       <ar-frame id="frame" trackvisibility="true" visible="false" parent="vuforia.stonesandchips.stones" position="0 0 0" rotation="0 0 0">
  
- 	 <!-- This is a bust with simple coloring -->
+ 	 <!-- This is a bust with simple coloring 
 	  <a-entity  position= " 0 0 0" scale= ".01 .01 .01" rotation="0 45 0" obj-model="obj: #bust-obj; mtl: #bust-mtl">
-	  </a-entity>
+	  </a-entity>-->
 	  
-   <!--  <a-sphere position="0 1.25 -1" radius="1.25" color="#00FF00"></a-sphere>   -->
+   <a-sphere position="0 1.25 -1" radius="1.25" color="#00FF00"></a-sphere>   
 
       </ar-frame>      
     </ar-scene>
