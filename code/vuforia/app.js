@@ -66,7 +66,7 @@ arScene.addEventListener('exit-vr', function (evt) {
     hudElem.classList.remove("viewerMode");
     hudElem2.classList.remove("viewerMode");
 });
-
+/*
 var scene = document.querySelector('#stuff');
 for (var i = 0; i < 12; i++) {
     var obj = document.createElement('a-entity');
@@ -102,4 +102,4 @@ function getRandColor () {
 function getRandCoord () {
     var coord = Math.random() * 20;
     return Math.random() < .5 ? coord + 5 : coord * -1 - 5;
-}
+}*/
