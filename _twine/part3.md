@@ -3,7 +3,7 @@ layout: page
 title: 'Part 3: Writing a simple Argon-Twine experience'
 ---
 
-> This lesson uses the first [example](https://github.com/blairmacintyre/oldfashioned/tree/master/examples/) from github. <br> Import the text file into Twine to open the project.
+> This lesson uses the first [example](https://github.com/blairmacintyre/oldfashioned/tree/master/examples/) from GitHub. <br> Import the text file into Twine to open the project.
 
 
 ## Creating a Story in Twine
@@ -14,7 +14,7 @@ After creating a new project, you will be directed to the Twine editing page. At
 It is important to note that an Argon-Twine project is separated into three different components, the passages (written in the OldFashioned format), a story CSS stylesheet, and a JavaScript component.
 
 ## Writing the JavaScript Component
-Let's begin by opening up the JavaScript component for editing. In any Argon-Twine project, you should begin by doing a "passage-cleanup", which removes any passage entities. For simple projects the following code will suffice.
+Let's begin by opening the JavaScript component for editing. In any Argon-Twine project, you should begin by doing a "passage-cleanup", which removes any passage entities. For simple projects the following code will suffice.
 
 ```javascript
 
@@ -86,7 +86,7 @@ Macro.add(['append3d', 'replace3d'], {
 ## The "Start" and "StoryInit" passages
 Now we move to the simpler part: the passages component. Navigate to the grid view of the project. You should see an untitled passage. Open the editor for the passage and name it `Start`. This passage will be the beginning of any AR experience you create with Twine.
 
-**NOTE:** The first passage we create must be the `Start` passage.
+> **NOTE:** The first passage we create must be the `Start` passage.
 
 But before we begin editing this passage, let's create a new passage and name it `StoryInit`. `StoryInit` is a special passage that is used to make any preparations that must be done before beginning the AR experience. Among other actions, it can be used to initialize story entities. In the passage editor for `StoryInit`, we will add a story-entity consisting of two 3D objects, a box and a sphere. We will call this entity, quite simply, `box-and-sphere`. Add the following code to the `StoryInit` passage.
 
@@ -101,7 +101,7 @@ But before we begin editing this passage, let's create a new passage and name it
 Notice that the attributes of these 3D objects are readily customizable. Another important point is that attributes like `radius`, `width`, `height`, and `depth` are in units of meters.
 
 ## Adding Passage Entities
-Now we can finally get into the core of the creation process. We will open up the editor for the `Start` passage again and add some basic text that will be overlayed onto the screen when we run the project. We will also add a passage-entity consisting of a simple green sphere. Add the following code to the `Start` passage.
+Now we can finally get into the core of the creation process. We will open the editor for the `Start` passage again and add some basic text that will be overlayed onto the screen when we run the project. We will also add a passage-entity consisting of a simple green sphere. Add the following code to the `Start` passage.
 
 ```html
 
@@ -139,6 +139,6 @@ This is a third AR scene. Click [[second|second]] to go to the second scene, or 
 ```
 
 ## Exporting the Project
-Now let's export and use our experience! From the Twine dashboard, click the cog icon in the upper right corner of your AR project and click the "Publish to File" button, which will create an html file that will hold your AR experience. To view this example, you need to serve it to the Argon browser running on an iOS device. If you view it in a regular browser, you will simply see a white background, because the background video reality can only be provided by Argon.Simply find a way to store this file on the Internet, for example, through GitHub pages, and then navigate to the file using the Argon4 application.
+Now let's export and use our experience! From the Twine dashboard, click the cog icon in the upper right corner of your AR project and click the "Publish to File" button, which will create an html file that will hold your AR experience. To view this example, you need to serve it to the Argon browser running on an iOS device. If you view it in a regular browser, you will simply see a white background, because the background video reality can only be provided by Argon. Simply find a way to store this file on the Internet, for example, through GitHub pages, and then navigate to the file using the Argon4 application.
 
 Congratulations, you now have the tools to create simple AR experiences with Twine! Next, we will take a look at CSS styling in Twine.

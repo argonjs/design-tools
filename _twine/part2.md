@@ -15,8 +15,7 @@ To run the example, follow the steps below:
 
 At this point, the 3D models and text associated with the story image should appear on your phone.
 
-**NOTE:**
-Alternatively, instead of printing the story images for step 1, you can simply point your phone at the images on your computer screen. However, the 3D models may be rotated in an unpredictable way, so it is recommended you print the images.
+>**NOTE:** Alternatively, instead of printing the story images for step 1, you can simply point your phone at the images on your computer screen. However, the 3D models may be rotated in an unpredictable way, so it is recommended you print the images.
 
 The source code for this example can be found in this [GitHub directory](https://github.com/argonjs/understanding-argon-twine).
 
